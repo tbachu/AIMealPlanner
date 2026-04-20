@@ -20,6 +20,9 @@ const MONTE_CARLO_ITERATIONS = 25000
 const LEADERBOARD_LIMIT = 32
 const DIVERSE_RESULTS_LIMIT = 5
 const DIVERSITY_THRESHOLD = 0.65
+const REFINE_CANDIDATES = 10
+const MAX_REFINE_PASSES = 4
+const MEAL_KEYS = ['breakfast', 'lunch', 'dinner']
 
 const EPSILON = 1
 
@@ -194,6 +197,32 @@ const CONDIMENT_SECTION_KEYWORDS = [
   'topping',
 ]
 
+const TYPE_KEYWORDS = [
+  'bagel', 'bread', 'roll', 'biscuit', 'croissant', 'toast', 'tortilla', 'pita',
+  'waffle', 'pancake', 'crepe', 'french toast',
+  'muffin', 'scone', 'donut', 'pastry', 'turnover', 'croissant',
+  'egg', 'omelet', 'omelette', 'frittata',
+  'yogurt', 'oats', 'grits', 'granola', 'cereal',
+  'chicken', 'beef', 'pork', 'turkey', 'lamb',
+  'fish', 'salmon', 'tilapia', 'tuna', 'shrimp', 'cod',
+  'sausage', 'ham', 'bacon', 'pepperoni',
+  'tofu', 'tempeh',
+  'pasta', 'noodle', 'ravioli', 'macaroni', 'spaghetti', 'fettuccine', 'penne',
+  'pizza', 'flatbread',
+  'rice', 'quinoa',
+  'beans', 'lentils', 'hummus',
+  'soup', 'chili', 'stew',
+  'salad',
+  'sandwich', 'sub', 'hoagie',
+  'burger', 'patty',
+  'wrap', 'burrito', 'taco', 'quesadilla',
+  'bowl',
+  'cake', 'cookie', 'brownie', 'pudding',
+  'potato', 'fries',
+  'broccoli', 'carrot', 'corn', 'spinach', 'cabbage', 'kale',
+  'apple', 'banana', 'orange', 'melon', 'berry', 'grape', 'pear', 'peach',
+]
+
 function toNumber(value) {
   const parsed = Number(value)
   return Number.isFinite(parsed) ? parsed : 0
@@ -249,6 +278,19 @@ function isCondimentLike(item) {
   }
 
   return false
+}
+
+function foodTypeKey(item) {
+  const name = itemName(item)
+  let bestMatch = ''
+  for (const keyword of TYPE_KEYWORDS) {
+    if (name.includes(keyword) && keyword.length > bestMatch.length) {
+      bestMatch = keyword
+    }
+  }
+  if (bestMatch) return bestMatch
+  const words = name.trim().split(/\s+/)
+  return words[words.length - 1] || name
 }
 
 function itemCategory(item) {
@@ -342,6 +384,23 @@ function repeatPenalty(selectedMeals) {
     }
   }
 
+  return penalty
+}
+
+function typeDayRepeatPenalty(selectedMeals) {
+  const typeCounts = new Map()
+  for (const mealItems of [selectedMeals.breakfast, selectedMeals.lunch, selectedMeals.dinner]) {
+    for (const item of mealItems) {
+      const key = foodTypeKey(item)
+      typeCounts.set(key, (typeCounts.get(key) ?? 0) + 1)
+    }
+  }
+  let penalty = 0
+  for (const count of typeCounts.values()) {
+    if (count > 2) {
+      penalty += (count - 2) * 28
+    }
+  }
   return penalty
 }
 
@@ -510,19 +569,25 @@ function sampleMeal(mealKey, poolInfo) {
   const size = randomInt(bounds.min, bounds.max)
   const counts = chooseCategoryCounts(mealKey, size, categories)
   const usedLocal = new Set()
+  const usedTypeKeys = new Set()
+
+  const pickWithTypeGuard = (pool, count, weightFn) => {
+    const available = pool.filter((item) => !usedTypeKeys.has(foodTypeKey(item)))
+    const picks = pickUniqueFromPool(available, count, usedLocal, weightFn)
+    for (const pick of picks) usedTypeKeys.add(foodTypeKey(pick))
+    return picks
+  }
 
   const items = [
-    ...pickUniqueFromPool(categories.entree, counts.entree, usedLocal, entreeWeight),
-    ...pickUniqueFromPool(categories.side, counts.side, usedLocal, sideWeight),
-    ...pickUniqueFromPool(categories.treat, counts.treat, usedLocal, treatWeight),
+    ...pickWithTypeGuard(categories.entree, counts.entree, entreeWeight),
+    ...pickWithTypeGuard(categories.side, counts.side, sideWeight),
+    ...pickWithTypeGuard(categories.treat, counts.treat, treatWeight),
   ]
 
   while (items.length < size) {
-    const fallbackPicks = pickUniqueFromPool(poolInfo.allItems, 1, usedLocal, entreeWeight)
-    if (!fallbackPicks.length) {
-      break
-    }
-    items.push(...fallbackPicks)
+    const fallback = pickWithTypeGuard(poolInfo.allItems, 1, entreeWeight)
+    if (!fallback.length) break
+    items.push(...fallback)
   }
 
   if (items.length < bounds.min) {
@@ -567,6 +632,61 @@ function mealProteinPenalty(mealKey, actualProtein, mealTargetProtein) {
 function mealMacroFloorPenalty(actualValue, mealTargetValue, shareFloor, linearWeight, quadraticWeight) {
   const floor = toNumber(mealTargetValue) * shareFloor
   return undershootPenalty(actualValue, floor, linearWeight, quadraticWeight)
+}
+
+function scoreMeals(meals, goals, mealTargets) {
+  const { breakfast, lunch, dinner } = meals
+  const dayItems = [...breakfast, ...lunch, ...dinner]
+  const dayTotals = combinationTotals(dayItems)
+  const breakfastTotals = combinationTotals(breakfast)
+  const lunchTotals = combinationTotals(lunch)
+  const dinnerTotals = combinationTotals(dinner)
+  const calorieGoal = toNumber(goals.calories)
+  const carbGoal = toNumber(goals.carbs)
+  const proteinGoal = toNumber(goals.protein)
+
+  const dayLoss = macroLoss(goals, dayTotals)
+  const splitLoss =
+    macroLoss(mealTargets.breakfast, breakfastTotals) +
+    macroLoss(mealTargets.lunch, lunchTotals) +
+    macroLoss(mealTargets.dinner, dinnerTotals)
+
+  const realismLoss =
+    comboPenalty(breakfast, 'breakfast') +
+    comboPenalty(lunch, 'lunch') +
+    comboPenalty(dinner, 'dinner')
+
+  const proteinLoss =
+    proteinUndershootPenalty(dayTotals.protein, goals.protein) +
+    mealProteinPenalty('breakfast', breakfastTotals.protein, mealTargets.breakfast.protein) +
+    mealProteinPenalty('lunch', lunchTotals.protein, mealTargets.lunch.protein) +
+    mealProteinPenalty('dinner', dinnerTotals.protein, mealTargets.dinner.protein)
+
+  const calorieLoss =
+    undershootPenalty(dayTotals.calories, goals.calories, 3.8, 9.5) +
+    mealMacroFloorPenalty(breakfastTotals.calories, mealTargets.breakfast.calories, MIN_MEAL_CALORIE_SHARE.breakfast, 2, 5) +
+    mealMacroFloorPenalty(lunchTotals.calories, mealTargets.lunch.calories, MIN_MEAL_CALORIE_SHARE.lunch, 2, 5) +
+    mealMacroFloorPenalty(dinnerTotals.calories, mealTargets.dinner.calories, MIN_MEAL_CALORIE_SHARE.dinner, 2, 5)
+
+  const carbLoss =
+    undershootPenalty(dayTotals.carbs, goals.carbs, 3.2, 8.5) +
+    mealMacroFloorPenalty(breakfastTotals.carbs, mealTargets.breakfast.carbs, MIN_MEAL_CARB_SHARE.breakfast, 1.6, 4.2) +
+    mealMacroFloorPenalty(lunchTotals.carbs, mealTargets.lunch.carbs, MIN_MEAL_CARB_SHARE.lunch, 1.8, 4.4) +
+    mealMacroFloorPenalty(dinnerTotals.carbs, mealTargets.dinner.carbs, MIN_MEAL_CARB_SHARE.dinner, 1.8, 4.4)
+
+  const proteinFloor = proteinGoal >= 120 ? DAY_MIN_SHARE.protein : 0.72
+  const gateLoss =
+    undershootPenalty(dayTotals.calories, calorieGoal * DAY_MIN_SHARE.calories, 7.5, 18) +
+    undershootPenalty(dayTotals.carbs, carbGoal * DAY_MIN_SHARE.carbs, 6.2, 16) +
+    undershootPenalty(dayTotals.protein, proteinGoal * proteinFloor, 13, 34) +
+    undershootPenalty(dayTotals.protein, proteinGoal, 8, 20) +
+    undershootPenalty(dayTotals.protein, proteinGoal * 0.9, 7, 18) +
+    undershootPenalty(carbGoal, dayTotals.carbs, 4, 10)
+
+  // dayLoss is weighted 2x to make day-total macro accuracy the primary objective
+  const loss = 2 * dayLoss + splitLoss * 0.55 + realismLoss + repeatPenalty(meals) + typeDayRepeatPenalty(meals) + proteinLoss + calorieLoss + carbLoss + gateLoss
+
+  return { loss, dayTotals }
 }
 
 function setFromMeals(meals) {
@@ -651,6 +771,55 @@ function mapCandidateToResult(candidate, normalizedHall) {
     hall: normalizedHall,
     score: candidate.loss,
   }
+}
+
+function greedyRefine(candidate, poolInfo, goals, mealTargets) {
+  let meals = {
+    breakfast: [...candidate.meals.breakfast],
+    lunch: [...candidate.meals.lunch],
+    dinner: [...candidate.meals.dinner],
+  }
+  let { loss } = scoreMeals(meals, goals, mealTargets)
+
+  for (let pass = 0; pass < MAX_REFINE_PASSES; pass++) {
+    let anyImproved = false
+
+    for (const mealKey of MEAL_KEYS) {
+      const pool = poolInfo[mealKey].allItems
+
+      for (let idx = 0; idx < meals[mealKey].length; idx++) {
+        const currentMeal = meals[mealKey]
+        let bestSwap = null
+        let bestLoss = loss
+
+        for (const poolItem of pool) {
+          if (currentMeal.includes(poolItem)) continue
+          const poolItemType = foodTypeKey(poolItem)
+          if (currentMeal.some((other, i) => i !== idx && foodTypeKey(other) === poolItemType)) continue
+          const trialMeal = [...currentMeal]
+          trialMeal[idx] = poolItem
+          const { loss: trialLoss } = scoreMeals({ ...meals, [mealKey]: trialMeal }, goals, mealTargets)
+          if (trialLoss < bestLoss) {
+            bestLoss = trialLoss
+            bestSwap = poolItem
+          }
+        }
+
+        if (bestSwap !== null) {
+          const updated = [...meals[mealKey]]
+          updated[idx] = bestSwap
+          meals = { ...meals, [mealKey]: updated }
+          loss = bestLoss
+          anyImproved = true
+        }
+      }
+    }
+
+    if (!anyImproved) break
+  }
+
+  const { dayTotals } = scoreMeals(meals, goals, mealTargets)
+  return { meals, dayTotals, loss, itemSet: setFromMeals(meals) }
 }
 
 export function recommendMeals(rows, goals, hall, preferences) {
@@ -755,17 +924,11 @@ export function recommendMeals(rows, goals, hall, preferences) {
     }
 
     const meals = { breakfast, lunch, dinner }
-    const dayItems = [...breakfast, ...lunch, ...dinner]
-
-    const dayTotals = combinationTotals(dayItems)
     const breakfastTotals = combinationTotals(breakfast)
     const lunchTotals = combinationTotals(lunch)
     const dinnerTotals = combinationTotals(dinner)
 
     const calorieGoal = toNumber(goals.calories)
-    const carbGoal = toNumber(goals.carbs)
-    const proteinGoal = toNumber(goals.protein)
-
     if (calorieGoal > 0) {
       const mealFloor = calorieGoal * MIN_MEAL_CALORIE_SHARE.breakfast
       if (
@@ -777,81 +940,7 @@ export function recommendMeals(rows, goals, hall, preferences) {
       }
     }
 
-    const dayLoss = macroLoss(goals, dayTotals)
-    const splitLoss =
-      macroLoss(mealTargets.breakfast, breakfastTotals) +
-      macroLoss(mealTargets.lunch, lunchTotals) +
-      macroLoss(mealTargets.dinner, dinnerTotals)
-
-    const realismLoss =
-      comboPenalty(breakfast, 'breakfast') +
-      comboPenalty(lunch, 'lunch') +
-      comboPenalty(dinner, 'dinner')
-
-    const proteinLoss =
-      proteinUndershootPenalty(dayTotals.protein, goals.protein) +
-      mealProteinPenalty('breakfast', breakfastTotals.protein, mealTargets.breakfast.protein) +
-      mealProteinPenalty('lunch', lunchTotals.protein, mealTargets.lunch.protein) +
-      mealProteinPenalty('dinner', dinnerTotals.protein, mealTargets.dinner.protein)
-
-    const calorieLoss =
-      undershootPenalty(dayTotals.calories, goals.calories, 3.8, 9.5) +
-      mealMacroFloorPenalty(
-        breakfastTotals.calories,
-        mealTargets.breakfast.calories,
-        MIN_MEAL_CALORIE_SHARE.breakfast,
-        2,
-        5
-      ) +
-      mealMacroFloorPenalty(
-        lunchTotals.calories,
-        mealTargets.lunch.calories,
-        MIN_MEAL_CALORIE_SHARE.lunch,
-        2,
-        5
-      ) +
-      mealMacroFloorPenalty(
-        dinnerTotals.calories,
-        mealTargets.dinner.calories,
-        MIN_MEAL_CALORIE_SHARE.dinner,
-        2,
-        5
-      )
-
-    const carbLoss =
-      undershootPenalty(dayTotals.carbs, goals.carbs, 3.2, 8.5) +
-      mealMacroFloorPenalty(
-        breakfastTotals.carbs,
-        mealTargets.breakfast.carbs,
-        MIN_MEAL_CARB_SHARE.breakfast,
-        1.6,
-        4.2
-      ) +
-      mealMacroFloorPenalty(
-        lunchTotals.carbs,
-        mealTargets.lunch.carbs,
-        MIN_MEAL_CARB_SHARE.lunch,
-        1.8,
-        4.4
-      ) +
-      mealMacroFloorPenalty(
-        dinnerTotals.carbs,
-        mealTargets.dinner.carbs,
-        MIN_MEAL_CARB_SHARE.dinner,
-        1.8,
-        4.4
-      )
-
-    const proteinFloor = proteinGoal >= 120 ? DAY_MIN_SHARE.protein : 0.72
-    const gateLoss =
-      undershootPenalty(dayTotals.calories, calorieGoal * DAY_MIN_SHARE.calories, 7.5, 18) +
-      undershootPenalty(dayTotals.carbs, carbGoal * DAY_MIN_SHARE.carbs, 6.2, 16) +
-      undershootPenalty(dayTotals.protein, proteinGoal * proteinFloor, 13, 34) +
-      undershootPenalty(dayTotals.protein, proteinGoal, 8, 20) +
-      undershootPenalty(dayTotals.protein, proteinGoal * 0.9, 7, 18) +
-      undershootPenalty(carbGoal, dayTotals.carbs, 4, 10)
-
-    const loss = dayLoss + splitLoss * 0.55 + realismLoss + repeatPenalty(meals) + proteinLoss + calorieLoss + carbLoss + gateLoss
+    const { loss, dayTotals } = scoreMeals(meals, goals, mealTargets)
 
     insertLeaderboard(leaderboard, {
       meals,
@@ -861,7 +950,18 @@ export function recommendMeals(rows, goals, hall, preferences) {
     })
   }
 
-  const diverseCandidates = selectDiverseCandidates(leaderboard)
+  // Greedy refinement: hill-climb each top candidate by trying single-item swaps
+  const refinedLeaderboard = []
+  for (const candidate of leaderboard.slice(0, REFINE_CANDIDATES)) {
+    const refined = greedyRefine(candidate, poolInfo, goals, mealTargets)
+    insertLeaderboard(refinedLeaderboard, refined)
+    insertLeaderboard(refinedLeaderboard, candidate)
+  }
+  for (const candidate of leaderboard.slice(REFINE_CANDIDATES)) {
+    insertLeaderboard(refinedLeaderboard, candidate)
+  }
+
+  const diverseCandidates = selectDiverseCandidates(refinedLeaderboard)
   const best = diverseCandidates[0]
   const result = mapCandidateToResult(best, normalizedHall)
 

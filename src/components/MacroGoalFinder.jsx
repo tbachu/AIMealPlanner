@@ -179,7 +179,7 @@ export default function MacroGoalFinder() {
             value={form.calories}
             onChange={handleChange('calories')}
             className="mt-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-slate-900 shadow-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/25"
-            placeholder="e.g. 2200"
+            placeholder="e.g. 2000"
           />
         </label>
 
@@ -192,7 +192,7 @@ export default function MacroGoalFinder() {
             value={form.protein}
             onChange={handleChange('protein')}
             className="mt-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-slate-900 shadow-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/25"
-            placeholder="e.g. 150"
+            placeholder="e.g. 100"
           />
         </label>
 
@@ -205,7 +205,7 @@ export default function MacroGoalFinder() {
             value={form.carbs}
             onChange={handleChange('carbs')}
             className="mt-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-slate-900 shadow-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/25"
-            placeholder="e.g. 250"
+            placeholder="e.g. 300"
           />
         </label>
 
@@ -218,7 +218,7 @@ export default function MacroGoalFinder() {
             value={form.fat}
             onChange={handleChange('fat')}
             className="mt-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-slate-900 shadow-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/25"
-            placeholder="e.g. 70"
+            placeholder="e.g. 30"
           />
         </label>
 
