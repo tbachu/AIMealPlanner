@@ -25,21 +25,21 @@ const EPSILON = 1
 
 const LOSS_WEIGHTS = {
   calories: 1.35,
-  protein: 2.6,
-  carbs: 1.4,
+  protein: 4.4,
+  carbs: 1.6,
   fat: 1,
 }
 
 const OVERSHOOT_MULTIPLIERS = {
   calories: 1.2,
   protein: 0.9,
-  carbs: 1,
+  carbs: 1.55,
   fat: 1.4,
 }
 
 const UNDERSHOOT_MULTIPLIERS = {
   calories: 1.45,
-  protein: 1,
+  protein: 2.45,
   carbs: 1.35,
   fat: 1,
 }
@@ -51,9 +51,9 @@ const MIN_MEAL_PROTEIN_SHARE = {
 }
 
 const MIN_MEAL_CALORIE_SHARE = {
-  breakfast: 0.62,
-  lunch: 0.62,
-  dinner: 0.62,
+  breakfast: 0.25,
+  lunch: 0.25,
+  dinner: 0.25,
 }
 
 const MIN_MEAL_CARB_SHARE = {
@@ -65,6 +65,7 @@ const MIN_MEAL_CARB_SHARE = {
 const DAY_MIN_SHARE = {
   calories: 0.85,
   carbs: 0.82,
+  protein: 0.8,
 }
 
 const CATEGORY_RULES = {
@@ -141,6 +142,9 @@ const TREAT_SECTION_KEYWORDS = [
   'sweets',
   'ice cream',
 ]
+
+const EXCLUDED_SECTIONS = ['beverages', 'condiments and spreads', 'cereal']
+const EXCLUDED_ITEM_KEYWORDS = ['ice cream']
 
 const DESSERT_KEYWORDS = [
   'cake',
@@ -255,7 +259,7 @@ function itemCategory(item) {
   const calories = toNumber(item?.calories)
   const protein = toNumber(item?.protein)
 
-  if (isMainItem(item) || protein >= 13 || (protein >= 9 && calories >= 200)) {
+  if (isMainItem(item) || protein >= 14 || (protein >= 10 && calories >= 180)) {
     return 'entree'
   }
 
@@ -263,7 +267,7 @@ function itemCategory(item) {
     return 'side'
   }
 
-  if (protein >= 8 || calories >= 170) {
+  if (protein >= 9 && calories >= 140) {
     return 'entree'
   }
 
@@ -478,15 +482,21 @@ function pickUniqueFromPool(pool, count, usedLocal, weightFn) {
 function entreeWeight(item) {
   const protein = toNumber(item?.protein)
   const calories = Math.max(toNumber(item?.calories), 1)
+  const carbs = toNumber(item?.totalCarbohydrates)
   const density = protein / calories
+  const carbRatio = carbs / calories
   const mainBonus = isMainItem(item) ? 2.5 : 0
-  return 1 + protein * 0.5 + density * 45 + mainBonus
+  const lowProteinPenalty = protein < 10 ? 3.2 : 0
+  const carbPenalty = carbRatio > 0.16 ? (carbRatio - 0.16) * 30 : 0
+  return Math.max(0.1, 1 + protein * 0.82 + density * 74 + mainBonus - lowProteinPenalty - carbPenalty)
 }
 
 function sideWeight(item) {
   const protein = toNumber(item?.protein)
   const carbs = toNumber(item?.totalCarbohydrates)
-  return 1 + protein * 0.18 + carbs * 0.05
+  const calories = Math.max(toNumber(item?.calories), 1)
+  const carbRatio = carbs / calories
+  return Math.max(0.1, 1 + protein * 0.42 + carbs * 0.01 - (carbRatio > 0.2 ? (carbRatio - 0.2) * 20 : 0))
 }
 
 function treatWeight(item) {
@@ -530,7 +540,7 @@ function proteinUndershootPenalty(actualProtein, goalProtein) {
   }
 
   const missRatio = (goal - actual) / Math.max(goal, EPSILON)
-  return missRatio * 10 + missRatio * missRatio * 28
+  return missRatio * 14 + missRatio * missRatio * 42
 }
 
 function undershootPenalty(actual, goal, linearWeight, quadraticWeight) {
@@ -653,7 +663,19 @@ export function recommendMeals(rows, goals, hall, preferences) {
     return String(item?.diningHall || '').toLowerCase() === normalizedHall
   })
 
-  let usableRows = filteredRows.filter((item) => !isCondimentLike(item))
+  let usableRows = filteredRows.filter((item) => {
+    const name = itemName(item)
+    const section = itemSection(item)
+    if (EXCLUDED_ITEM_KEYWORDS.some((keyword) => name.includes(keyword))) {
+      return false
+    }
+
+    if (EXCLUDED_SECTIONS.some((excludedSection) => section.includes(excludedSection))) {
+      return false
+    }
+
+    return !isCondimentLike(item)
+  })
 
   const dietaryRestriction = preferences?.dietaryRestriction ?? 'none'
   if (dietaryRestriction === 'vegan') {
@@ -742,11 +764,17 @@ export function recommendMeals(rows, goals, hall, preferences) {
 
     const calorieGoal = toNumber(goals.calories)
     const carbGoal = toNumber(goals.carbs)
-    if (calorieGoal > 0 && dayTotals.calories < calorieGoal * DAY_MIN_SHARE.calories) {
-      continue
-    }
-    if (carbGoal > 0 && dayTotals.carbs < carbGoal * DAY_MIN_SHARE.carbs) {
-      continue
+    const proteinGoal = toNumber(goals.protein)
+
+    if (calorieGoal > 0) {
+      const mealFloor = calorieGoal * MIN_MEAL_CALORIE_SHARE.breakfast
+      if (
+        breakfastTotals.calories < mealFloor ||
+        lunchTotals.calories < mealFloor ||
+        dinnerTotals.calories < mealFloor
+      ) {
+        continue
+      }
     }
 
     const dayLoss = macroLoss(goals, dayTotals)
@@ -814,7 +842,16 @@ export function recommendMeals(rows, goals, hall, preferences) {
         4.4
       )
 
-    const loss = dayLoss + splitLoss * 0.55 + realismLoss + repeatPenalty(meals) + proteinLoss + calorieLoss + carbLoss
+    const proteinFloor = proteinGoal >= 120 ? DAY_MIN_SHARE.protein : 0.72
+    const gateLoss =
+      undershootPenalty(dayTotals.calories, calorieGoal * DAY_MIN_SHARE.calories, 7.5, 18) +
+      undershootPenalty(dayTotals.carbs, carbGoal * DAY_MIN_SHARE.carbs, 6.2, 16) +
+      undershootPenalty(dayTotals.protein, proteinGoal * proteinFloor, 13, 34) +
+      undershootPenalty(dayTotals.protein, proteinGoal, 8, 20) +
+      undershootPenalty(dayTotals.protein, proteinGoal * 0.9, 7, 18) +
+      undershootPenalty(carbGoal, dayTotals.carbs, 4, 10)
+
+    const loss = dayLoss + splitLoss * 0.55 + realismLoss + repeatPenalty(meals) + proteinLoss + calorieLoss + carbLoss + gateLoss
 
     insertLeaderboard(leaderboard, {
       meals,
