@@ -1,12 +1,21 @@
-const MODEL = 'gemini-2.5-flash'
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`
+const DEFAULT_OLLAMA_MODEL = 'llama3.2:3b'
+const DEFAULT_OLLAMA_URL = 'http://127.0.0.1:11434'
 
-function getApiKey() {
-  const key = import.meta.env.VITE_GEMINI_API_KEY
-  if (!key || typeof key !== 'string') {
-    throw new Error('Missing VITE_GEMINI_API_KEY. Add it to your .env file.')
-  }
-  return key.trim()
+function getOllamaConfig() {
+  const rawModel = import.meta.env.VITE_OLLAMA_MODEL
+  const rawUrl = import.meta.env.VITE_OLLAMA_URL
+
+  const model =
+    typeof rawModel === 'string' && rawModel.trim()
+      ? rawModel.trim()
+      : DEFAULT_OLLAMA_MODEL
+
+  const baseUrl =
+    typeof rawUrl === 'string' && rawUrl.trim()
+      ? rawUrl.trim().replace(/\/+$/, '')
+      : DEFAULT_OLLAMA_URL
+
+  return { model, baseUrl }
 }
 
 function buildPrompt(preferences, menuData) {
@@ -122,14 +131,10 @@ Output JSON shape:
 }`
 }
 
-function extractTextFromResponse(data) {
-  const parts = data?.candidates?.[0]?.content?.parts
-  if (!Array.isArray(parts)) {
-    throw new Error('Unexpected Gemini response: missing candidates[0].content.parts')
-  }
-  const text = parts.map((p) => p?.text ?? '').join('')
-  if (!text.trim()) {
-    throw new Error('Unexpected Gemini response: empty text')
+function extractTextFromOllamaResponse(data) {
+  const text = data?.message?.content
+  if (typeof text !== 'string' || !text.trim()) {
+    throw new Error('Unexpected Ollama response: missing message.content')
   }
   return text.trim()
 }
@@ -190,31 +195,40 @@ function extractPlanPayload(result) {
   return result
 }
 
-async function requestGeminiJson(prompt) {
-  const apiKey = getApiKey()
+async function requestOllamaJson(prompt) {
+  const { model, baseUrl } = getOllamaConfig()
 
-  const response = await fetch(`${GEMINI_URL}?key=${encodeURIComponent(apiKey)}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      generationConfig: {
-        temperature: 0.35,
-        responseMimeType: 'application/json',
-      },
-    }),
-  })
+  let response
+  try {
+    response = await fetch(`${baseUrl}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model,
+        messages: [{ role: 'user', content: prompt }],
+        stream: false,
+        format: 'json',
+        options: {
+          temperature: 0.35,
+        },
+      }),
+    })
+  } catch {
+    throw new Error(
+      `Could not reach Ollama at ${baseUrl}. Make sure Ollama is running (try: ollama serve).`
+    )
+  }
 
   const data = await response.json().catch(() => ({}))
 
   if (!response.ok) {
     const msg =
-      data?.error?.message ||
-      `Gemini API error: ${response.status} ${response.statusText}`
+      data?.error ||
+      `Ollama API error: ${response.status} ${response.statusText}`
     throw new Error(msg)
   }
 
-  const text = extractTextFromResponse(data)
+  const text = extractTextFromOllamaResponse(data)
   return parseModelJson(text)
 }
 
@@ -225,7 +239,7 @@ async function requestGeminiJson(prompt) {
  */
 export async function generateMealPlan(preferences, menuData) {
   const prompt = buildPrompt(preferences, menuData)
-  return requestGeminiJson(prompt)
+  return requestOllamaJson(prompt)
 }
 
 /**
@@ -240,7 +254,7 @@ export async function generateMealPlanFromChat(
   savedPreferences,
 ) {
   const prompt = buildChatPrompt(chatHistory, menuData, savedPreferences)
-  const result = await requestGeminiJson(prompt)
+  const result = await requestOllamaJson(prompt)
 
   const assistantMessage =
     typeof result?.assistantMessage === 'string' && result.assistantMessage.trim()

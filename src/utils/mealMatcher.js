@@ -316,15 +316,6 @@ function itemCategory(item) {
   return 'side'
 }
 
-function itemMacros(item) {
-  return {
-    calories: toNumber(item?.calories),
-    protein: toNumber(item?.protein),
-    carbs: toNumber(item?.totalCarbohydrates),
-    fat: toNumber(item?.totalFat),
-  }
-}
-
 function comboPenalty(items, mealKey) {
   const dessertCount = items.reduce((count, item) => count + (isDessertLike(item) ? 1 : 0), 0)
   const mainCount = items.reduce((count, item) => count + (isMainItem(item) ? 1 : 0), 0)
