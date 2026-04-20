@@ -2,6 +2,25 @@ import { useMemo, useState } from 'react'
 import useDiningMenuCsv from '../hooks/useDiningMenuCsv'
 import { recommendMeals } from '../utils/mealMatcher'
 
+const PREFERENCES_STORAGE_KEY = 'aimealplanner.preferences'
+
+function readStoredPreferences() {
+  try {
+    const item = localStorage.getItem(PREFERENCES_STORAGE_KEY)
+    if (!item) return { dietaryRestriction: 'none', allergies: '', diningHall: 'all' }
+    const parsed = JSON.parse(item)
+    return {
+      dietaryRestriction: ['none', 'vegetarian', 'vegan'].includes(parsed?.dietaryRestriction)
+        ? parsed.dietaryRestriction
+        : 'none',
+      allergies: typeof parsed?.allergies === 'string' ? parsed.allergies : '',
+      diningHall: parsed?.diningHall || 'all',
+    }
+  } catch {
+    return { dietaryRestriction: 'none', allergies: '', diningHall: 'all' }
+  }
+}
+
 const DEFAULTS = {
   calories: '',
   protein: '',
@@ -74,7 +93,11 @@ function MealCard({ title, item }) {
 
 export default function MacroGoalFinder() {
   const { rows, loading, error } = useDiningMenuCsv()
-  const [form, setForm] = useState(DEFAULTS)
+  const [form, setForm] = useState(() => {
+    const prefs = readStoredPreferences()
+    return { ...DEFAULTS, hall: prefs.diningHall !== 'all' ? prefs.diningHall : 'all' }
+  })
+  const [activePreferences, setActivePreferences] = useState(() => readStoredPreferences())
   const [result, setResult] = useState(null)
   const [isSearching, setIsSearching] = useState(false)
   const [message, setMessage] = useState('Enter macro goals to find a best-fit breakfast, lunch, and dinner.')
@@ -106,7 +129,9 @@ export default function MacroGoalFinder() {
 
     await new Promise((resolve) => window.requestAnimationFrame(() => resolve()))
 
-    const matched = recommendMeals(rows, goals, form.hall)
+    const latestPreferences = readStoredPreferences()
+    setActivePreferences(latestPreferences)
+    const matched = recommendMeals(rows, goals, form.hall, latestPreferences)
     setResult(matched)
     setIsSearching(false)
 
@@ -129,6 +154,14 @@ export default function MacroGoalFinder() {
           <p className="mt-3 max-w-3xl text-lg leading-relaxed text-slate-600">
             Enter calorie, protein, carb, and fat targets. The matcher will build a breakfast, lunch, and dinner plate with multiple items from the live dining CSV.
           </p>
+          {activePreferences.dietaryRestriction !== 'none' && (
+            <p className="mt-2 text-sm text-primary font-medium">
+              Dietary filter active:{' '}
+              <span className="font-semibold capitalize">{activePreferences.dietaryRestriction}</span>
+              {activePreferences.allergies ? ` · Avoiding: ${activePreferences.allergies}` : ''}
+              {' '}(from Preferences)
+            </p>
+          )}
         </div>
 
         <div className="rounded-2xl border border-primary/15 bg-primary/5 px-4 py-3 text-sm text-primary">

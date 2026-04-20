@@ -643,7 +643,7 @@ function mapCandidateToResult(candidate, normalizedHall) {
   }
 }
 
-export function recommendMeals(rows, goals, hall) {
+export function recommendMeals(rows, goals, hall, preferences) {
   const normalizedHall = String(hall || 'all').toLowerCase()
   const filteredRows = (Array.isArray(rows) ? rows : []).filter((item) => {
     if (normalizedHall === 'all') {
@@ -653,7 +653,25 @@ export function recommendMeals(rows, goals, hall) {
     return String(item?.diningHall || '').toLowerCase() === normalizedHall
   })
 
-  const usableRows = filteredRows.filter((item) => !isCondimentLike(item))
+  let usableRows = filteredRows.filter((item) => !isCondimentLike(item))
+
+  const dietaryRestriction = preferences?.dietaryRestriction ?? 'none'
+  if (dietaryRestriction === 'vegan') {
+    usableRows = usableRows.filter((item) => item.vegan === true)
+  } else if (dietaryRestriction === 'vegetarian') {
+    usableRows = usableRows.filter((item) => item.vegetarian === true)
+  }
+
+  const allergies = typeof preferences?.allergies === 'string' ? preferences.allergies.trim() : ''
+  if (allergies) {
+    const allergyTerms = allergies.toLowerCase().split(/[,;\s]+/).map((t) => t.trim()).filter(Boolean)
+    if (allergyTerms.length > 0) {
+      usableRows = usableRows.filter((item) => {
+        const name = String(item?.foodName || '').toLowerCase()
+        return !allergyTerms.some((term) => name.includes(term))
+      })
+    }
+  }
 
   const mealPools = {
     breakfast: usableRows.filter((item) => mealAvailableFor(item, 'breakfast')),

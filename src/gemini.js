@@ -33,8 +33,9 @@ ${menuJson}
 Rules:
 1. Every breakfast, lunch, and dinner value MUST be copied verbatim from the correct date, "${diningHall}", and meal period array in the menu. Do not invent dishes.
 2. Sort the date keys in the menu chronologically. Map them in order to Monday, Tuesday, … If there are fewer than 7 dates, repeat the last available day's menu choices for the remaining weekdays, still only using items listed for that date and hall.
-3. Respect dietary restriction and allergies when choosing among allowed menu items.
-4. Return ONLY valid JSON, no markdown or explanation.
+3. HARD CONSTRAINT — Dietary restriction must be strictly enforced: if the restriction is "vegetarian", every selected dish MUST be vegetarian (no meat, poultry, or seafood). If it is "vegan", every selected dish MUST be vegan (no animal products). Never select a dish that violates this restriction.
+4. HARD CONSTRAINT — Allergies must be strictly enforced: never select a dish whose name or likely ingredients match any allergy listed above.
+5. Return ONLY valid JSON, no markdown or explanation.
 
 Output shape (all keys lowercase):
 {
@@ -91,19 +92,20 @@ ${transcript || 'USER: Generate me a balanced weekly meal plan.'}
 
 Saved user preferences (apply by default unless the user explicitly overrides in this conversation):
 - Dietary restriction: ${normalizedPreferences.dietaryRestriction}
-- Allergies (avoid likely ingredients): ${normalizedPreferences.allergies || 'none listed'}
+- Allergies (avoid any dish that likely contains these ingredients): ${normalizedPreferences.allergies || 'none listed'}
 - Preferred dining hall: ${normalizedPreferences.diningHall}
 
 Menu data (JSON, keyed by date YYYY-MM-DD, then dining hall, then meal period with arrays of dish names):
 ${menuJson}
 
 Rules:
-1. Treat saved user preferences as default constraints for this plan request.
-2. If the user explicitly overrides a default in the conversation, honor the explicit user override.
-3. Every breakfast, lunch, and dinner value in plan must be copied verbatim from the provided menu data. Do not invent dish names.
-4. Sort menu date keys chronologically and map them to Monday, Tuesday, ... in order. If fewer than 7 dates exist, reuse the last available date's meals.
-5. Use the preferred dining hall for all meals unless the user explicitly asks for another hall.
-6. Return ONLY valid JSON, with no markdown.
+1. HARD CONSTRAINT — Dietary restriction must be strictly enforced: if the restriction is "vegetarian", every selected dish MUST be vegetarian (no meat, poultry, or seafood). If it is "vegan", every selected dish MUST be vegan (no meat, dairy, eggs, honey, or any animal product). Never include a dish that violates this restriction, even if the user does not repeat it in their message.
+2. HARD CONSTRAINT — Allergies must be strictly enforced: never select a dish whose name or likely ingredients match any allergy term listed above.
+3. If the user explicitly overrides a preference in the conversation, honor that override.
+4. Every breakfast, lunch, and dinner value in the plan must be copied verbatim from the provided menu data. Do not invent dish names.
+5. Sort menu date keys chronologically and map them to Monday, Tuesday, ... in order. If fewer than 7 dates exist, reuse the last available date's meals.
+6. Use the preferred dining hall for all meals unless the user explicitly asks for another hall.
+7. Return ONLY valid JSON, with no markdown.
 
 Output JSON shape:
 {
