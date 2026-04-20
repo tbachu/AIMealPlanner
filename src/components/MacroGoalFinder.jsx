@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { flushSync } from 'react-dom'
 import useDiningMenuCsv from '../hooks/useDiningMenuCsv'
 import { recommendMeals } from '../utils/mealMatcher'
 
@@ -124,14 +125,18 @@ export default function MacroGoalFinder() {
       return
     }
 
-    setIsSearching(true)
-    setMessage('Searching the menu for a realistic multi-item meal set…')
+    flushSync(() => {
+      setIsSearching(true)
+      setMessage('Searching the menu for a realistic multi-item meal set…')
+    })
 
+    await new Promise((resolve) => setTimeout(resolve, 0))
     await new Promise((resolve) => window.requestAnimationFrame(() => resolve()))
 
     const latestPreferences = readStoredPreferences()
     setActivePreferences(latestPreferences)
     const matched = recommendMeals(rows, goals, form.hall, latestPreferences)
+
     setResult(matched)
     setIsSearching(false)
 
@@ -238,13 +243,21 @@ export default function MacroGoalFinder() {
         </label>
 
         <div className="sm:col-span-2 xl:col-span-5">
-          <button
-            type="submit"
-            disabled={loading || isSearching}
-            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md shadow-primary/30 transition hover:bg-primary/90"
-          >
-            {isSearching ? 'Finding meals...' : 'Find meals'}
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              type="submit"
+              disabled={loading || isSearching}
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md shadow-primary/30 transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-90"
+            >
+              <span>Find meals</span>
+            </button>
+
+            {isSearching && (
+              <div className="inline-flex items-center text-primary" aria-label="Loading meals">
+                <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-primary/30 border-t-primary" />
+              </div>
+            )}
+          </div>
         </div>
       </form>
 

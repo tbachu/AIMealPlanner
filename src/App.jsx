@@ -24,10 +24,8 @@ function App() {
               className="h-12 w-auto rounded-lg bg-white/95 p-1 shadow-sm sm:h-14"
             />
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-                AIMealPlanner
-              </p>
-              <p className="text-2xl font-semibold text-white sm:text-3xl">Meal Planner</p>
+
+              <p className="text-2xl font-semibold text-white sm:text-3xl">AI Meal Planner</p>
             </div>
           </div>
 
@@ -40,7 +38,7 @@ function App() {
                   [
                     'rounded-full border px-4 py-2 text-sm font-semibold tracking-wide transition-colors',
                     isActive
-                      ? 'border-white bg-white text-primary'
+                      ? 'border-white bg-white !text-primary'
                       : 'border-white/35 bg-primary/30 text-white hover:bg-white/20',
                   ].join(' ')
                 }
