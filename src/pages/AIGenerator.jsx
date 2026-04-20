@@ -16,9 +16,16 @@ const MEAL_PERIODS = ['breakfast', 'lunch', 'dinner']
 
 const CHAT_HISTORY_STORAGE_KEY = 'aimealplanner.ai.chatHistory'
 const PLAN_STORAGE_KEY = 'aimealplanner.ai.latestPlan'
+const PREFERENCES_STORAGE_KEY = 'aimealplanner.preferences'
+
+const DEFAULT_PREFERENCES = {
+  dietaryRestriction: 'none',
+  allergies: '',
+  diningHall: 'chase',
+}
 
 const INITIAL_ASSISTANT_MESSAGE =
-  'Tell me your goals and constraints, and I will generate a 7-day plan from the live menu. Example: vegetarian, no peanuts, prefer Lenoir, high-protein lunches.'
+  'Tell me your goals and constraints, and I will generate a 7-day plan from the live menu. Your saved Preferences are applied automatically by default.'
 
 function createMessage(role, text) {
   return {
@@ -67,6 +74,48 @@ function readStoredMessages() {
       : [createMessage('assistant', INITIAL_ASSISTANT_MESSAGE)]
   } catch {
     return [createMessage('assistant', INITIAL_ASSISTANT_MESSAGE)]
+  }
+}
+
+function normalizeSavedPreferences(raw) {
+  if (!raw || typeof raw !== 'object') {
+    return { ...DEFAULT_PREFERENCES }
+  }
+
+  const dietaryRestriction = ['none', 'vegetarian', 'vegan'].includes(
+    raw.dietaryRestriction
+  )
+    ? raw.dietaryRestriction
+    : DEFAULT_PREFERENCES.dietaryRestriction
+
+  const allergies =
+    typeof raw.allergies === 'string' ? raw.allergies.trim() : ''
+
+  const hall =
+    typeof raw.diningHall === 'string' ? raw.diningHall.toLowerCase() : ''
+  const diningHall = hall === 'chase' || hall === 'lenoir' ? hall : 'chase'
+
+  return {
+    dietaryRestriction,
+    allergies,
+    diningHall,
+  }
+}
+
+function readStoredPreferences() {
+  if (typeof window === 'undefined') {
+    return { ...DEFAULT_PREFERENCES }
+  }
+
+  const saved = window.localStorage.getItem(PREFERENCES_STORAGE_KEY)
+  if (!saved) {
+    return { ...DEFAULT_PREFERENCES }
+  }
+
+  try {
+    return normalizeSavedPreferences(JSON.parse(saved))
+  } catch {
+    return { ...DEFAULT_PREFERENCES }
   }
 }
 
@@ -169,11 +218,29 @@ function formatTimestamp(isoDate) {
   }
 }
 
+function formatPreferenceValue(key, value) {
+  if (key === 'dietaryRestriction') {
+    if (value === 'none') {
+      return 'None'
+    }
+    return value.charAt(0).toUpperCase() + value.slice(1)
+  }
+
+  if (key === 'allergies') {
+    return value || 'None listed'
+  }
+
+  return value.charAt(0).toUpperCase() + value.slice(1)
+}
+
 function AIGenerator() {
   const { menu, loading: menuLoading, error: menuError } = useMenu()
 
   const [messages, setMessages] = useState(() => readStoredMessages())
   const [planState, setPlanState] = useState(() => readStoredPlanState())
+  const [savedPreferences, setSavedPreferences] = useState(() =>
+    readStoredPreferences()
+  )
   const [chatInput, setChatInput] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState('')
@@ -247,7 +314,14 @@ function AIGenerator() {
     setIsGenerating(true)
 
     try {
-      const response = await generateMealPlanFromChat(nextMessages, menu)
+      const latestPreferences = readStoredPreferences()
+      setSavedPreferences(latestPreferences)
+
+      const response = await generateMealPlanFromChat(
+        nextMessages,
+        menu,
+        latestPreferences,
+      )
       const normalized = normalizeGeneratedPlan(response.plan)
 
       shouldAutoScrollPlanRef.current = true
@@ -317,6 +391,24 @@ function AIGenerator() {
         </div>
         <p className="mt-1 text-xs text-slate-500">
           Chat history is saved on this device and reused in future prompts.
+        </p>
+        <p className="mt-2 text-xs text-slate-600">
+          Using saved defaults: Diet{' '}
+          <span className="font-semibold text-slate-800">
+            {formatPreferenceValue(
+              'dietaryRestriction',
+              savedPreferences.dietaryRestriction,
+            )}
+          </span>
+          , Allergies{' '}
+          <span className="font-semibold text-slate-800">
+            {formatPreferenceValue('allergies', savedPreferences.allergies)}
+          </span>
+          , Hall{' '}
+          <span className="font-semibold text-slate-800">
+            {formatPreferenceValue('diningHall', savedPreferences.diningHall)}
+          </span>
+          .
         </p>
 
         <div ref={chatHistoryRef} className="mt-3 max-h-72 space-y-3 overflow-y-auto pr-1">

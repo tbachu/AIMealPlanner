@@ -48,7 +48,31 @@ Output shape (all keys lowercase):
 }`
 }
 
-function buildChatPrompt(chatHistory, menuData) {
+function normalizeSavedPreferences(preferences) {
+  const dietary =
+    preferences?.dietaryRestriction === 'vegetarian' ||
+    preferences?.dietaryRestriction === 'vegan'
+      ? preferences.dietaryRestriction
+      : 'none'
+
+  const allergies =
+    typeof preferences?.allergies === 'string' ? preferences.allergies.trim() : ''
+
+  const hall =
+    typeof preferences?.diningHall === 'string'
+      ? preferences.diningHall.toLowerCase()
+      : ''
+  const diningHall = hall === 'chase' || hall === 'lenoir' ? hall : 'chase'
+
+  return {
+    dietaryRestriction: dietary,
+    allergies,
+    diningHall,
+  }
+}
+
+function buildChatPrompt(chatHistory, menuData, savedPreferences) {
+  const normalizedPreferences = normalizeSavedPreferences(savedPreferences)
   const menuJson = JSON.stringify(menuData ?? {}, null, 2)
   const transcript = Array.isArray(chatHistory)
     ? chatHistory
@@ -65,15 +89,21 @@ function buildChatPrompt(chatHistory, menuData) {
 Conversation transcript:
 ${transcript || 'USER: Generate me a balanced weekly meal plan.'}
 
+Saved user preferences (apply by default unless the user explicitly overrides in this conversation):
+- Dietary restriction: ${normalizedPreferences.dietaryRestriction}
+- Allergies (avoid likely ingredients): ${normalizedPreferences.allergies || 'none listed'}
+- Preferred dining hall: ${normalizedPreferences.diningHall}
+
 Menu data (JSON, keyed by date YYYY-MM-DD, then dining hall, then meal period with arrays of dish names):
 ${menuJson}
 
 Rules:
-1. Infer user preferences from the conversation (diet, allergies, preferred hall, etc.).
-2. Every breakfast, lunch, and dinner value in plan must be copied verbatim from the provided menu data. Do not invent dish names.
-3. Sort menu date keys chronologically and map them to Monday, Tuesday, ... in order. If fewer than 7 dates exist, reuse the last available date's meals.
-4. If hall preference is unclear, default to "chase".
-5. Return ONLY valid JSON, with no markdown.
+1. Treat saved user preferences as default constraints for this plan request.
+2. If the user explicitly overrides a default in the conversation, honor the explicit user override.
+3. Every breakfast, lunch, and dinner value in plan must be copied verbatim from the provided menu data. Do not invent dish names.
+4. Sort menu date keys chronologically and map them to Monday, Tuesday, ... in order. If fewer than 7 dates exist, reuse the last available date's meals.
+5. Use the preferred dining hall for all meals unless the user explicitly asks for another hall.
+6. Return ONLY valid JSON, with no markdown.
 
 Output JSON shape:
 {
@@ -199,10 +229,15 @@ export async function generateMealPlan(preferences, menuData) {
 /**
  * @param {Array<{role: 'user'|'assistant', text: string}>} chatHistory
  * @param {object} menuData
+ * @param {object} savedPreferences - e.g. { dietaryRestriction, allergies, diningHall }
  * @returns {Promise<{assistantMessage: string, plan: object}>}
  */
-export async function generateMealPlanFromChat(chatHistory, menuData) {
-  const prompt = buildChatPrompt(chatHistory, menuData)
+export async function generateMealPlanFromChat(
+  chatHistory,
+  menuData,
+  savedPreferences,
+) {
+  const prompt = buildChatPrompt(chatHistory, menuData, savedPreferences)
   const result = await requestGeminiJson(prompt)
 
   const assistantMessage =
