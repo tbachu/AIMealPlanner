@@ -1,5 +1,5 @@
 import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
-import AIGenerator from './pages/AIGenerator'
+import ChatPlanner from './components/ChatPlanner'
 import Home from './pages/Home'
 import Preferences from './pages/Preferences'
 import Planner from './pages/Planner'
@@ -54,7 +54,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/planner" element={<Planner />} />
-          <Route path="/ai" element={<AIGenerator />} />
+          <Route path="/ai" element={<ChatPlanner />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
