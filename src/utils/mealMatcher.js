@@ -1144,7 +1144,7 @@ export function recommendMeals(rows, goals, hall, preferences) {
   const leaderboard = []
   const iterations = Math.min(
     MONTE_CARLO_ITERATIONS,
-    6000 + filteredRows.length * 30
+    600 + filteredRows.length * 10
   )
 
   for (let iteration = 0; iteration < iterations; iteration += 1) {
