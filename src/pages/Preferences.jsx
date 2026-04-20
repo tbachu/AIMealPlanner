@@ -6,7 +6,6 @@ const DEFAULTS = {
   dietaryRestriction: 'none',
   allergies: '',
   diningHall: 'chase',
-  mealSwipesRemaining: 0,
 }
 
 function normalizeStored(raw) {
@@ -25,19 +24,12 @@ function normalizeStored(raw) {
     hall = DEFAULTS.diningHall
   }
 
-  let swipes = Number(raw.mealSwipesRemaining)
-  if (!Number.isFinite(swipes)) {
-    swipes = DEFAULTS.mealSwipesRemaining
-  }
-  swipes = Math.min(21, Math.max(0, Math.round(swipes)))
-
   const allergies = typeof raw.allergies === 'string' ? raw.allergies : ''
 
   return {
     dietaryRestriction: dietary,
     allergies,
     diningHall: hall,
-    mealSwipesRemaining: swipes,
   }
 }
 
@@ -70,18 +62,6 @@ export default function Preferences() {
     writePreferences(next)
     setSavedHint(true)
     window.setTimeout(() => setSavedHint(false), 2200)
-  }
-
-  const setSwipes = (value) => {
-    const n = Number.parseInt(value, 10)
-    if (Number.isNaN(n)) {
-      setPrefs((p) => ({ ...p, mealSwipesRemaining: 0 }))
-      return
-    }
-    setPrefs((p) => ({
-      ...p,
-      mealSwipesRemaining: Math.min(21, Math.max(0, n)),
-    }))
   }
 
   return (
@@ -173,26 +153,6 @@ export default function Preferences() {
             ))}
           </div>
         </fieldset>
-
-        <div>
-          <label
-            htmlFor="mealSwipes"
-            className="text-sm font-semibold text-slate-800"
-          >
-            Meal swipes remaining this week
-          </label>
-          <input
-            id="mealSwipes"
-            type="number"
-            min={0}
-            max={21}
-            step={1}
-            value={prefs.mealSwipesRemaining}
-            onChange={(e) => setSwipes(e.target.value)}
-            className={`${fieldClass} max-w-[12rem]`}
-          />
-          <p className="mt-1.5 text-xs text-slate-500">Enter a whole number from 0 to 21.</p>
-        </div>
 
         <div className="flex flex-wrap items-center gap-4 pt-2">
           <button
