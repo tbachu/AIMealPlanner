@@ -1,0 +1,56 @@
+{
+  "2026-04-19": {
+    "chase": {
+      "breakfast": [
+        "Belgian waffle station",
+        "Scrambled eggs",
+        "Stone-ground grits",
+        "Fresh fruit medley"
+      ],
+      "lunch": [
+        "Grilled lemon-herb chicken",
+        "Macaroni and cheese",
+        "Caesar salad",
+        "Vegetable stir-fry with tofu"
+      ],
+      "dinner": [
+        "Herb-roasted salmon",
+        "Beef taco bar",
+        "Minestrone soup",
+        "Roasted seasonal vegetables"
+      ]
+    },
+    "lenoir": {
+      "breakfast": [
+        "Breakfast burrito bar",
+        "Steel-cut oatmeal",
+        "Bagels and cream cheese",
+        "Yogurt parfait with granola"
+      ],
+      "lunch": [
+        "Tomato basil soup",
+        "Turkey club sandwich",
+        "Mediterranean quinoa bowl",
+        "Pasta primavera"
+      ],
+      "dinner": [
+        "Rotisserie chicken",
+        "Penne arrabbiata",
+        "Mixed green salad",
+        "Chocolate chip cookies"
+      ]
+    }
+  },
+  "2026-04-20": {
+    "chase": {
+      "breakfast": ["French toast", "Egg whites", "Hash browns", "Melon cup"],
+      "lunch": ["Chicken parmesan", "Minestrone", "Garden salad", "Veggie wrap"],
+      "dinner": ["Pulled pork sliders", "Baked potato bar", "Broccoli cheddar soup", "Steamed rice"]
+    },
+    "lenoir": {
+      "breakfast": ["Pancake stack", "Greek yogurt", "Toast bar", "Apple slices"],
+      "lunch": ["Pho station", "Summer rolls", "Asian slaw", "Jasmine rice"],
+      "dinner": ["Burger night", "Sweet potato fries", "Coleslaw", "Brownie bites"]
+    }
+  }
+}

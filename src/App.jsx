@@ -1,6 +1,6 @@
 import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
 import AiPage from './pages/AiPage'
-import HomePage from './pages/HomePage'
+import Home from './pages/Home'
 import PlannerPage from './pages/PlannerPage'
 import PreferencesPage from './pages/PreferencesPage'
 
@@ -46,7 +46,7 @@ function App() {
 
       <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/planner" element={<PlannerPage />} />
           <Route path="/ai" element={<AiPage />} />
           <Route path="/preferences" element={<PreferencesPage />} />
