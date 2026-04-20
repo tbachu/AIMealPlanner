@@ -1,16 +1,11 @@
-# React + Vite
+# AIMealPlanner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AIMealPlanner is a full-stack meal planning assistant built for students who want practical, macro-aware dining hall choices without spending hours comparing menu items. The app combines a React + Vite frontend with a lightweight data pipeline that ingests dining menu data and recommends realistic breakfast, lunch, and dinner combinations.
 
-Currently, two official plugins are available:
+The planner lets users enter daily calorie and macro goals, choose preference profiles, and generate meal sets that balance protein, carbohydrates, and fats across the day. Recommendation logic uses constrained sampling and scoring to search many candidate combinations, then ranks outputs based on goal fit, variety, and meal realism. Additional guardrails filter low-quality options by excluding irrelevant sections, reducing repetitive item patterns, and favoring entree-adjacent selections so results feel like actual meals.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The interface includes dedicated pages for home, planner, AI-assisted ideas, and dietary preferences. A focused navigation bar keeps key flows easy to access, while active-state styling and loading feedback make interactions clear during meal generation.
 
-## React Compiler
+Project structure is simple: frontend source lives in src, utility logic is in src/utils, and backend scripts are in backend, including scraper.py for menu data collection. Parsed menu data is stored under public/data for fast client-side access.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run locally, install dependencies with npm install, then use npm run dev for development and npm run build for production builds. AIMealPlanner is designed to be easy to extend with new optimization rules, campus data sources, and personalization features.
