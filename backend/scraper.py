@@ -178,6 +178,12 @@ class UNCDiningScaper:
                 self.output_dir.mkdir(parents=True, exist_ok=True)
                 filename = self.output_dir / f"dining_menu_{timestamp}.csv"
                 df.to_csv(filename, index=False)
+
+                public_dir = Path(__file__).resolve().parents[1] / "public" / "data"
+                public_dir.mkdir(parents=True, exist_ok=True)
+                public_filename = public_dir / "dining_menu.csv"
+                df.to_csv(public_filename, index=False)
+
                 print(f"Saved {len(df)} menu rows to {filename}")
                 return df
 

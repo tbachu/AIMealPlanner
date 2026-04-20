@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import useMenu from '../hooks/useMenu'
+import MacroGoalFinder from '../components/MacroGoalFinder'
 
 const DAY_ORDER = [
   'monday',
@@ -136,8 +137,11 @@ function Planner() {
   }
 
   return (
-    <section className="rounded-3xl border border-primary/20 bg-white/85 p-8 shadow-[0_24px_60px_-32px_rgba(75,156,211,0.65)] backdrop-blur">
-      <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+    <div className="space-y-8">
+      <MacroGoalFinder />
+
+      <section className="rounded-3xl border border-primary/20 bg-white/85 p-8 shadow-[0_24px_60px_-32px_rgba(75,156,211,0.65)] backdrop-blur">
+        <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">
             Planner
@@ -229,7 +233,8 @@ function Planner() {
           ))}
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   )
 }
 
