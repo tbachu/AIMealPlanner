@@ -37,7 +37,7 @@ const OVERSHOOT_MULTIPLIERS = {
   calories: 1.2,
   protein: 0.9,
   carbs: 1.55,
-  fat: 1.4,
+  fat: 2.35,
 }
 
 const UNDERSHOOT_MULTIPLIERS = {
@@ -789,6 +789,17 @@ function undershootPenalty(actual, goal, linearWeight, quadraticWeight) {
   return missRatio * linearWeight + missRatio * missRatio * quadraticWeight
 }
 
+function overshootPenalty(actual, goal, linearWeight, quadraticWeight) {
+  const target = toNumber(goal)
+  const value = toNumber(actual)
+  if (target <= 0 || value <= target) {
+    return 0
+  }
+
+  const overRatio = (value - target) / Math.max(target, EPSILON)
+  return overRatio * linearWeight + overRatio * overRatio * quadraticWeight
+}
+
 function mealProteinPenalty(mealKey, actualProtein, mealTargetProtein) {
   const floor = toNumber(mealTargetProtein) * (MIN_MEAL_PROTEIN_SHARE[mealKey] ?? 0.6)
   if (floor <= 0 || actualProtein >= floor) {
@@ -854,6 +865,11 @@ function scoreMeals(meals, goals, mealTargets) {
     mealMacroFloorPenalty(breakfastTotals.carbs, mealTargets.breakfast.carbs, MIN_MEAL_CARB_SHARE.breakfast, 1.6, 4.2) +
     mealMacroFloorPenalty(lunchTotals.carbs, mealTargets.lunch.carbs, MIN_MEAL_CARB_SHARE.lunch, 1.8, 4.4) +
     mealMacroFloorPenalty(dinnerTotals.carbs, mealTargets.dinner.carbs, MIN_MEAL_CARB_SHARE.dinner, 1.8, 4.4)
+  const fatLoss =
+    overshootPenalty(dayTotals.fat, goals.fat, 10, 28) +
+    overshootPenalty(breakfastTotals.fat, mealTargets.breakfast.fat * 1.2, 3.2, 7.4) +
+    overshootPenalty(lunchTotals.fat, mealTargets.lunch.fat * 1.2, 3.6, 8.2) +
+    overshootPenalty(dinnerTotals.fat, mealTargets.dinner.fat * 1.2, 3.6, 8.2)
 
   const proteinFloor = proteinGoal >= 120 ? DAY_MIN_SHARE.protein : 0.72
   const gateLoss =
@@ -878,6 +894,7 @@ function scoreMeals(meals, goals, mealTargets) {
     proteinLoss +
     calorieLoss +
     carbLoss +
+    fatLoss +
     gateLoss -
     comboBonus
 
