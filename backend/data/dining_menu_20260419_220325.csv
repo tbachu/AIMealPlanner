@@ -1,0 +1,649 @@
+Food Name,Dining Hall,Location,Section,Calories,Total Fat,Total Carbohydrates,Protein,Sodium,Vegan,Vegetarian,Made Without Gluten,Halal,Organic,breakfast,lunch,late lunch,dinner,late dinner,late night
+Waffle,lenoir,Top of Lenoir,Waffle Bar,90.0,0.5,20.0,3.0,270.0,False,True,False,True,False,1,1,1,1,0,0
+Pancake Syrup,lenoir,Top of Lenoir,Waffle Bar,70.0,0.0,19.0,0.0,25.0,True,True,True,False,False,1,1,1,1,0,0
+Whipped Topping,lenoir,Top of Lenoir,Waffle Bar,110.0,9.0,6.0,0.0,40.0,True,True,True,True,False,1,1,1,1,0,0
+Apple Compote,lenoir,Top of Lenoir,Waffle Bar,25.0,0.0,7.0,0.0,0.0,True,True,True,False,False,1,1,1,1,0,0
+Strawberry Compote,lenoir,Top of Lenoir,Waffle Bar,50.0,0.0,13.0,0.0,0.0,True,True,True,True,False,1,1,1,1,0,0
+Blueberry Compote,lenoir,Top of Lenoir,Waffle Bar,180.0,0.0,45.0,0.0,0.0,True,True,True,True,False,1,1,1,1,0,0
+Cinnamon French Toast,lenoir,Top of Lenoir,The Kitchen Table,360.0,7.0,54.0,17.0,580.0,False,True,False,False,False,1,0,0,0,0,0
+Impossible™ Sausage Patty,lenoir,Top of Lenoir,The Kitchen Table,110.0,7.0,5.0,6.0,320.0,True,True,True,True,False,1,0,0,0,0,0
+Pancake Syrup,lenoir,Top of Lenoir,The Kitchen Table,70.0,0.0,19.0,0.0,25.0,True,True,True,False,False,1,0,0,0,0,0
+Crispy Tater Tots,lenoir,Top of Lenoir,The Kitchen Table,120.0,6.0,15.0,1.0,330.0,True,True,True,True,False,1,0,0,0,0,0
+Scrambled Eggs,lenoir,Top of Lenoir,The Kitchen Table,200.0,15.0,0.0,14.0,190.0,False,True,True,True,False,1,0,0,0,0,0
+Pork Sausage Links,lenoir,Top of Lenoir,The Kitchen Table,190.0,19.0,0.0,7.0,370.0,False,False,True,False,False,1,0,0,0,0,0
+Cinnamon French Toast,lenoir,Top of Lenoir,Plant Forward,360.0,7.0,54.0,17.0,580.0,False,True,False,False,False,1,0,0,0,0,0
+Impossible™ Sausage Patty,lenoir,Top of Lenoir,Plant Forward,110.0,7.0,5.0,6.0,320.0,True,True,True,True,False,1,0,0,0,0,0
+Pancake Syrup,lenoir,Top of Lenoir,Plant Forward,70.0,0.0,19.0,0.0,25.0,True,True,True,False,False,1,0,0,0,0,0
+Crispy Tater Tots,lenoir,Top of Lenoir,Plant Forward,120.0,6.0,15.0,1.0,330.0,True,True,True,True,False,1,0,0,0,0,0
+Scrambled Eggs,lenoir,Top of Lenoir,Plant Forward,200.0,15.0,0.0,14.0,190.0,False,True,True,True,False,1,0,0,0,0,0
+Pork Sausage Links,lenoir,Top of Lenoir,Plant Forward,190.0,19.0,0.0,7.0,370.0,False,False,True,False,False,1,0,0,0,0,0
+Blueberry Banana Bread (Made Without Gluten),lenoir,Top of Lenoir,Specialty Bakery,130.0,3.0,16.0,2.0,25.0,False,True,True,False,False,1,0,0,0,0,0
+Vegan Coffee Cake,lenoir,Top of Lenoir,Specialty Bakery,210.0,7.0,37.0,2.0,150.0,True,True,False,False,False,1,0,0,0,0,0
+Cinnamon Sugar Donut Bites,lenoir,Top of Lenoir,Specialty Bakery,160.0,6.0,24.0,0.0,220.0,False,True,False,True,False,1,0,0,0,0,0
+Green Tea Strawberry Overnight Chia Oats,lenoir,Top of Lenoir,Specialty Bakery,480.0,10.0,88.0,13.0,220.0,False,True,False,True,False,1,0,0,0,0,0
+Sugar Dusted Croissants,lenoir,Top of Lenoir,Specialty Bakery,270.0,12.0,34.0,6.0,250.0,False,True,False,False,False,1,0,0,0,0,0
+Double Chocolate Chip Muffins,lenoir,Top of Lenoir,Specialty Bakery,410.0,12.0,73.0,5.0,470.0,False,True,False,False,False,1,0,0,0,0,0
+Blueberry Scone,lenoir,Top of Lenoir,Specialty Bakery,190.0,8.0,26.0,3.0,180.0,False,False,False,False,False,1,0,0,0,0,0
+Sun Butter®,lenoir,Top of Lenoir,Specialty Bakery,180.0,15.0,6.0,6.0,110.0,True,True,True,True,False,1,1,1,1,0,0
+Smart Balance Buttery Spread,lenoir,Top of Lenoir,Specialty Bakery,80.0,9.0,0.0,0.0,0.0,False,True,True,False,False,1,1,1,1,0,0
+Grape Jelly,lenoir,Top of Lenoir,Specialty Bakery,50.0,0.0,13.0,0.0,0.0,True,True,True,False,False,1,1,1,1,0,0
+Strawberry Cream Cheese,lenoir,Top of Lenoir,Specialty Bakery,90.0,8.0,5.0,1.0,120.0,False,True,True,True,False,1,1,1,1,0,0
+Housemade Veggie Cream Cheese,lenoir,Top of Lenoir,Specialty Bakery,70.0,6.0,2.0,1.0,115.0,False,True,True,False,False,1,1,1,1,0,0
+Cream Cheese,lenoir,Top of Lenoir,Specialty Bakery,100.0,9.0,1.0,2.0,110.0,False,True,True,False,False,1,1,1,1,0,0
+Old Fashioned Oatmeal,lenoir,Top of Lenoir,Homemade Soups & Sushi,150.0,3.0,27.0,5.0,5.0,True,True,False,True,False,1,0,0,0,0,0
+Grits,lenoir,Top of Lenoir,Homemade Soups & Sushi,120.0,0.0,28.0,3.0,100.0,True,True,True,True,False,1,0,0,0,0,0
+Biscuit,lenoir,Top of Lenoir,Homemade Soups & Sushi,260.0,12.0,35.0,5.0,840.0,False,True,False,False,False,1,0,0,0,0,0
+Sausage Gravy,lenoir,Top of Lenoir,Homemade Soups & Sushi,180.0,11.0,13.0,7.0,180.0,False,False,True,False,False,1,0,0,0,0,0
+Brown Sugar,lenoir,Top of Lenoir,Homemade Soups & Sushi,15.0,0.0,4.0,0.0,0.0,True,True,True,True,False,1,0,0,0,0,0
+Raisins,lenoir,Top of Lenoir,Homemade Soups & Sushi,90.0,0.0,22.0,1.0,5.0,True,True,True,True,False,1,0,0,0,0,0
+Spinach & Cheese Omelet,lenoir,Top of Lenoir,The Grill,150.0,12.0,2.0,10.0,170.0,False,True,True,False,False,1,0,0,0,0,0
+Cheddar Omelet,lenoir,Top of Lenoir,The Grill,290.0,21.0,0.77,22.0,290.0,False,True,True,False,False,1,0,0,0,0,0
+Bacon & Cheese Omelet,lenoir,Top of Lenoir,The Grill,400.0,28.0,2.0,29.0,690.0,False,False,True,False,False,1,0,0,0,0,0
+Turmeric Tofu Scramble,lenoir,Top of Lenoir,The Grill,180.0,10.0,5.0,18.0,160.0,False,True,True,False,False,1,0,0,0,0,0
+Breakfast Vegetable Fried Rice,lenoir,Top of Lenoir,The Grill,340.0,12.0,51.0,5.0,710.0,True,True,False,False,False,1,0,0,0,0,0
+Hard Boiled Egg,lenoir,Top of Lenoir,The Grill,90.0,6.0,0.64,7.0,70.0,False,True,True,True,False,1,0,0,0,0,0
+Cottage Cheese,lenoir,Top of Lenoir,Salad Bar,90.0,1.5,6.0,13.0,340.0,False,True,True,True,False,1,1,1,1,0,0
+Plain Greek Yogurt,lenoir,Top of Lenoir,Salad Bar,170.0,9.0,7.0,15.0,60.0,True,True,True,True,False,1,1,1,1,0,0
+Vanilla Yogurt,lenoir,Top of Lenoir,Salad Bar,160.0,2.5,26.0,8.0,105.0,False,False,False,False,False,1,0,0,0,0,0
+Nonfat Strawberry Yogurt,lenoir,Top of Lenoir,Salad Bar,120.0,0.0,24.0,6.0,95.0,False,True,True,False,False,1,0,0,0,0,0
+Applesauce,lenoir,Top of Lenoir,Salad Bar,60.0,0.0,16.0,0.0,0.0,True,True,True,True,False,1,1,1,1,0,0
+Brown Sugar,lenoir,Top of Lenoir,Salad Bar,15.0,0.0,4.0,0.0,0.0,True,True,True,True,False,1,0,0,0,0,0
+Raisins,lenoir,Top of Lenoir,Salad Bar,90.0,0.0,22.0,1.0,5.0,True,True,True,True,False,1,1,1,1,0,0
+Diced Pineapple,lenoir,Top of Lenoir,Salad Bar,35.0,0.0,9.0,1.0,0.0,True,True,True,True,False,1,1,1,1,0,0
+Honeydew Melon,lenoir,Top of Lenoir,Salad Bar,40.0,0.0,10.0,1.0,20.0,True,True,True,True,False,1,1,1,1,0,0
+Cantaloupe,lenoir,Top of Lenoir,Salad Bar,30.0,0.0,7.0,1.0,25.0,True,True,True,True,False,1,1,1,1,0,0
+Frosted Flakes®,lenoir,Top of Lenoir,Cereal,130.0,0.0,33.0,2.0,190.0,True,True,False,True,False,1,1,1,1,0,0
+Oats and Honey Granola,lenoir,Top of Lenoir,Cereal,130.0,3.0,21.0,3.0,25.0,False,True,False,False,False,1,1,1,1,0,0
+Cinnamon Toast Crunch™,lenoir,Top of Lenoir,Cereal,120.0,2.5,23.0,0.91,200.0,False,True,False,True,False,1,1,1,1,0,0
+Apple Jacks®,lenoir,Top of Lenoir,Cereal,110.0,1.0,23.0,0.0,170.0,False,True,False,True,False,1,1,1,1,0,0
+Lucky Charms™,lenoir,Top of Lenoir,Cereal,110.0,1.0,22.0,2.0,170.0,False,False,True,False,False,1,1,1,1,0,0
+Cheerios™,lenoir,Top of Lenoir,Cereal,80.0,1.0,16.0,3.0,100.0,False,True,True,True,False,1,1,1,1,0,0
+Golden Grahams™,lenoir,Top of Lenoir,Cereal,110.0,1.0,26.0,2.0,240.0,False,False,False,False,False,1,1,1,1,0,0
+Frosted Mini Wheats™,lenoir,Top of Lenoir,Cereal,140.0,0.5,33.0,4.0,0.0,False,False,False,False,False,1,1,1,1,0,0
+Wheat Bread Slice,lenoir,Top of Lenoir,Breads and Bagels,0.0,0.0,0.0,0.0,0.0,True,True,False,True,False,1,1,1,1,0,0
+White Bread,lenoir,Top of Lenoir,Breads and Bagels,60.0,0.0,12.0,2.0,125.0,True,True,False,False,False,1,1,1,1,0,0
+Multigrain Bagel,lenoir,Top of Lenoir,Breads and Bagels,270.0,2.0,56.0,11.0,580.0,True,True,False,True,False,1,1,1,1,0,0
+Blueberry Bagel,lenoir,Top of Lenoir,Breads and Bagels,290.0,0.0,61.0,9.0,530.0,True,True,False,True,False,1,1,1,1,0,0
+Poppy Seed Bagel,lenoir,Top of Lenoir,Breads and Bagels,290.0,0.5,59.0,10.0,560.0,True,True,False,True,False,1,1,1,1,0,0
+Sesame Bagel,lenoir,Top of Lenoir,Breads and Bagels,290.0,0.5,59.0,10.0,570.0,True,True,False,True,False,1,1,1,1,0,0
+Whole Wheat Bagel,lenoir,Top of Lenoir,Breads and Bagels,280.0,0.0,58.0,9.0,580.0,True,True,False,True,False,1,1,1,1,0,0
+Everything Bagel,lenoir,Top of Lenoir,Breads and Bagels,290.0,0.0,59.0,10.0,580.0,True,True,False,True,False,1,1,1,1,0,0
+French Toast Bagel,lenoir,Top of Lenoir,Breads and Bagels,280.0,0.0,59.0,9.0,600.0,True,True,False,True,False,1,1,1,1,0,0
+Cinnamon Raisin Bagel,lenoir,Top of Lenoir,Breads and Bagels,290.0,0.0,60.0,9.0,540.0,True,True,False,True,False,1,1,1,1,0,0
+Cheddar Jalapeno Bagel,lenoir,Top of Lenoir,Breads and Bagels,290.0,1.5,62.0,10.0,580.0,False,True,False,True,False,1,1,1,1,0,0
+Plain Bagel,lenoir,Top of Lenoir,Breads and Bagels,290.0,0.0,59.0,10.0,590.0,True,True,False,True,False,1,1,1,1,0,0
+Bob's Red Mill® Gluten Free Oats,lenoir,Top of Lenoir,Stress Less Cabinet,210.0,5.0,33.0,7.0,160.0,True,True,True,True,False,1,1,1,1,0,0
+Made Good Mini Soft Red Velvet Cookies,lenoir,Top of Lenoir,Stress Less Cabinet,120.0,6.0,14.0,1.0,65.0,True,True,True,True,False,1,1,1,1,0,0
+Made Good Soft Mini Snickerdoodle,lenoir,Top of Lenoir,Stress Less Cabinet,110.0,6.0,0.0,1.0,65.0,True,True,True,True,False,1,1,1,1,0,0
+Made Good Vanilla Crispy Squares,lenoir,Top of Lenoir,Stress Less Cabinet,80.0,0.5,18.0,1.0,100.0,True,True,True,True,False,1,1,1,1,0,0
+Dolci di Maria® GF Brownie,lenoir,Top of Lenoir,Stress Less Cabinet,380.0,19.0,53.0,3.0,40.0,False,True,True,False,False,1,1,1,1,0,0
+Bob's Red Mill® GF Apple & Cinnamon Oats,lenoir,Top of Lenoir,Stress Less Cabinet,270.0,5.0,48.0,7.0,310.0,True,True,True,True,False,1,1,1,1,0,0
+Dolci di Maria Carrot Cake,lenoir,Top of Lenoir,Stress Less Cabinet,550.0,27.0,73.0,6.0,500.0,False,True,False,True,False,1,1,1,1,0,0
+MadeGood® Soft Baked Chocolate Chip Cookie,lenoir,Top of Lenoir,Stress Less Cabinet,120.0,6.0,14.0,1.0,65.0,True,True,True,True,False,1,1,1,1,0,0
+MadeGood® Soft Baked Double Chocolate Cookies,lenoir,Top of Lenoir,Stress Less Cabinet,120.0,6.0,14.0,1.0,0.0,True,True,True,True,False,1,1,1,1,0,0
+MadeGood® Vanilla Crispy Squares,lenoir,Top of Lenoir,Stress Less Cabinet,80.0,1.0,18.0,1.0,100.0,True,True,True,False,False,1,1,1,1,0,0
+O'Doughs® Everything Bagel,lenoir,Top of Lenoir,Stress Less Cabinet,200.0,4.5,38.0,4.0,530.0,True,True,True,True,False,1,1,1,1,0,0
+O'Doughs® Multigrain Sandwich Slices,lenoir,Top of Lenoir,Stress Less Cabinet,160.0,2.0,33.0,3.0,340.0,True,True,True,True,False,1,1,1,1,0,0
+Katz® Brown Sugar Toaster Pastries,lenoir,Top of Lenoir,Stress Less Cabinet,440.0,14.0,80.0,4.0,460.0,True,True,True,True,False,1,1,1,1,0,0
+O'Doughs® Original Sandwich Slices,lenoir,Top of Lenoir,Stress Less Cabinet,160.0,2.0,34.0,3.0,330.0,True,True,True,True,False,1,1,1,1,0,0
+O'Doughs® Pumpernickel Bagel,lenoir,Top of Lenoir,Stress Less Cabinet,200.0,6.0,38.0,5.0,350.0,True,True,True,True,False,1,1,1,1,0,0
+Udi's® Blueberry Muffin,lenoir,Top of Lenoir,Stress Less Cabinet,260.0,9.0,40.0,3.0,260.0,False,True,True,False,False,1,1,1,1,0,0
+Udi's® Everything Bagel,lenoir,Top of Lenoir,Stress Less Cabinet,240.0,8.0,37.0,5.0,390.0,False,True,True,True,False,1,1,1,1,0,0
+Udi's® Gluten-Free Hamburger Bun,lenoir,Top of Lenoir,Stress Less Cabinet,190.0,5.0,32.0,5.0,360.0,False,True,True,True,False,1,1,1,1,0,0
+Udi's® Multigrain Bread,lenoir,Top of Lenoir,Stress Less Cabinet,140.0,5.0,23.0,2.0,260.0,False,True,True,True,False,1,1,1,1,0,0
+Udi's® Snickerdoodle Cookie,lenoir,Top of Lenoir,Stress Less Cabinet,220.0,8.0,36.0,1.0,150.0,False,True,True,False,False,1,1,1,1,0,0
+Udi's® White Bread,lenoir,Top of Lenoir,Stress Less Cabinet,140.0,5.0,24.0,2.0,270.0,False,True,True,True,False,1,1,1,1,0,0
+Oatmilk,lenoir,Top of Lenoir,Beverages,180.0,8.0,23.0,4.0,160.0,True,True,True,True,False,1,1,1,1,0,0
+Original Creamer,lenoir,Top of Lenoir,Beverages,20.0,1.0,2.0,0.0,5.0,False,True,True,False,False,1,1,1,1,0,0
+Hazelnut Creamer,lenoir,Top of Lenoir,Beverages,35.0,1.5,5.0,0.0,5.0,False,True,True,False,False,1,1,1,1,0,0
+French Vanilla Creamer,lenoir,Top of Lenoir,Beverages,35.0,1.5,5.0,0.0,5.0,False,True,True,False,False,1,1,1,1,0,0
+Bubbly Lime,lenoir,Top of Lenoir,Beverages,0.0,0.0,0.0,0.0,60.0,True,True,True,True,False,1,1,1,1,0,0
+Soymilk,lenoir,Top of Lenoir,Beverages,180.0,8.0,23.0,4.0,160.0,True,True,True,True,False,1,1,1,1,0,0
+Chocolate Peamilk,lenoir,Top of Lenoir,Beverages,140.0,6.0,15.0,8.0,190.0,True,True,True,True,False,1,1,1,1,0,0
+Southern Unsweet Tea,lenoir,Top of Lenoir,Beverages,0.0,0.0,0.0,0.0,15.0,True,True,True,False,False,1,1,1,1,0,0
+Southern Sweet Tea,lenoir,Top of Lenoir,Beverages,130.0,0.0,32.0,0.0,15.0,True,True,True,False,False,1,1,1,1,0,0
+Skim Milk,lenoir,Top of Lenoir,Beverages,80.0,0.0,12.0,8.0,105.0,False,True,True,True,False,1,1,1,1,0,0
+2% Reduced Fat Milk,lenoir,Top of Lenoir,Beverages,120.0,5.0,12.0,8.0,125.0,False,True,True,True,False,1,1,1,1,0,0
+1% Chocolate Milk,lenoir,Top of Lenoir,Beverages,150.0,2.5,26.0,8.0,230.0,False,True,True,True,False,1,1,1,1,0,0
+Larry's® Decaf Coffee,lenoir,Top of Lenoir,Beverages,0.0,0.0,0.0,0.0,0.0,True,True,True,True,True,1,1,1,1,0,0
+Larry's® Coffee,lenoir,Top of Lenoir,Beverages,0.0,0.0,0.0,0.0,0.0,True,True,True,True,True,1,1,1,1,0,0
+100% Cranberry Juice,lenoir,Top of Lenoir,Beverages,140.0,0.0,36.0,0.0,35.0,True,True,True,True,False,1,1,1,1,0,0
+100% Apple Juice,lenoir,Top of Lenoir,Beverages,110.0,0.0,28.0,0.0,35.0,True,True,True,True,False,1,1,1,1,0,0
+100% Orange Juice,lenoir,Top of Lenoir,Beverages,120.0,0.0,31.0,0.0,35.0,True,True,True,False,False,1,1,1,1,0,0
+Strawberry Kiwi Juice,lenoir,Top of Lenoir,Beverages,120.0,0.0,30.0,0.0,40.0,True,True,True,False,False,1,1,1,1,0,0
+Dr. Pepper®,lenoir,Top of Lenoir,Beverages,140.0,0.0,39.0,0.0,45.0,True,True,True,True,False,1,1,1,1,0,0
+Diet Dr. Pepper®,lenoir,Top of Lenoir,Beverages,0.0,0.0,0.0,0.0,70.0,True,True,True,True,False,1,1,1,1,0,0
+Diet Mountain Dew®,lenoir,Top of Lenoir,Beverages,0.0,0.0,0.0,0.0,55.0,True,True,True,False,False,1,1,1,1,0,0
+Mountain Dew®,lenoir,Top of Lenoir,Beverages,170.0,0.0,44.0,0.0,50.0,True,True,True,False,False,1,1,1,1,0,0
+Gatorade® Fruit Punch,lenoir,Top of Lenoir,Beverages,80.0,0.0,22.0,0.0,170.0,True,True,True,False,False,1,1,1,1,0,0
+Gatorade® Orange,lenoir,Top of Lenoir,Beverages,80.0,0.0,22.0,0.0,170.0,True,True,True,False,False,1,1,1,1,0,0
+Starry,lenoir,Top of Lenoir,Beverages,150.0,0.0,39.0,0.0,35.0,True,True,True,True,False,1,1,1,1,0,0
+Pepsi® Zero Sugar,lenoir,Top of Lenoir,Beverages,0.0,0.0,0.0,0.0,65.0,True,True,True,False,False,1,1,1,1,0,0
+Pepsi®,lenoir,Top of Lenoir,Beverages,150.0,0.0,41.0,0.0,30.0,True,True,True,False,False,1,1,1,1,0,0
+Root Beer,lenoir,Top of Lenoir,Beverages,140.0,0.0,39.0,0.0,45.0,True,True,True,True,False,1,1,1,1,0,0
+Sunkist® Orange,lenoir,Top of Lenoir,Beverages,160.0,0.0,44.0,0.0,45.0,True,True,True,False,False,1,1,1,1,0,0
+Cheerwine®,lenoir,Top of Lenoir,Beverages,150.0,0.0,42.0,0.0,25.0,True,True,True,True,False,1,1,1,1,0,0
+Schweppes® Ginger Ale,lenoir,Top of Lenoir,Beverages,130.0,0.0,33.0,0.0,50.0,True,True,True,False,False,1,1,1,1,0,0
+Tropicana® Lemonade,lenoir,Top of Lenoir,Beverages,150.0,0.0,40.0,0.0,150.0,True,True,True,False,False,1,1,1,1,0,0
+Tropicana® Fruit Punch,lenoir,Top of Lenoir,Beverages,170.0,0.0,45.0,0.0,35.0,True,True,True,False,False,1,1,1,1,0,0
+Honey Mustard,lenoir,Top of Lenoir,Condiments and Spreads,70.0,6.0,3.0,0.0,75.0,False,True,True,True,False,1,1,1,1,0,0
+Honey,lenoir,Top of Lenoir,Condiments and Spreads,45.0,0.0,11.0,0.0,0.0,True,True,True,True,False,1,1,1,1,0,0
+Mayonnaise,lenoir,Top of Lenoir,Condiments and Spreads,100.0,11.0,0.0,0.0,85.0,False,True,True,True,False,1,1,1,1,0,0
+Ketchup,lenoir,Top of Lenoir,Condiments and Spreads,20.0,0.0,5.0,0.0,180.0,True,True,True,True,False,1,1,1,1,0,0
+Sriracha Sauce,lenoir,Top of Lenoir,Condiments and Spreads,5.0,0.0,1.0,0.0,105.0,True,True,True,True,False,1,1,1,1,0,0
+BBQ Sauce,lenoir,Top of Lenoir,Condiments and Spreads,70.0,0.0,18.0,0.0,290.0,True,True,True,False,False,1,1,1,1,0,0
+Texas Pete® Hot Sauce,lenoir,Top of Lenoir,Condiments and Spreads,0.0,0.0,0.0,0.0,115.0,True,True,True,True,False,1,1,1,1,0,0
+Yellow Mustard,lenoir,Top of Lenoir,Condiments and Spreads,0.0,0.0,3.0,0.0,160.0,True,True,True,True,False,1,1,1,1,0,0
+Honey BBQ Chicken,lenoir,Top of Lenoir,The Kitchen Table,280.0,7.0,23.0,33.0,410.0,False,False,True,False,False,0,1,0,0,0,0
+Sauteed Kale & Brussels Sprouts,lenoir,Top of Lenoir,The Kitchen Table,60.0,3.0,6.0,3.0,110.0,True,True,True,False,False,0,1,0,0,0,0
+Cheddar-Chive Mashed Potatoes,lenoir,Top of Lenoir,The Kitchen Table,130.0,6.0,17.0,3.0,135.0,False,True,True,False,False,0,1,0,0,0,0
+Spicy Collard Greens,lenoir,Top of Lenoir,The Kitchen Table,70.0,4.0,6.0,4.0,420.0,False,False,True,False,False,0,1,0,0,0,0
+Strawberry Cheesecake Ice Cream,lenoir,Top of Lenoir,Ice Cream Bar,190.0,8.0,27.0,2.0,65.0,False,True,False,False,False,0,1,1,1,0,0
+Mango Sorbet,lenoir,Top of Lenoir,Ice Cream Bar,120.0,0.0,31.0,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Caramel Sauce,lenoir,Top of Lenoir,Ice Cream Bar,100.0,7.0,8.0,0.0,5.0,False,True,False,False,False,0,1,1,1,0,0
+Chocolate Sauce,lenoir,Top of Lenoir,Ice Cream Bar,110.0,9.0,7.0,0.0,5.0,False,True,True,False,False,0,1,1,1,0,0
+Salted Caramel Craze Ice Cream,lenoir,Top of Lenoir,Ice Cream Bar,230.0,10.0,32.0,3.0,180.0,False,True,True,False,False,0,1,1,1,0,0
+Soft Serve Chocolate Ice Cream,lenoir,Top of Lenoir,Ice Cream Bar,170.0,8.0,22.0,3.0,45.0,False,True,True,False,False,0,1,1,1,0,0
+Vanilla Ice Cream,lenoir,Top of Lenoir,Ice Cream Bar,170.0,9.0,21.0,3.0,50.0,False,True,True,True,False,0,1,1,1,0,0
+Mint Chocolate Chip Ice Cream,lenoir,Top of Lenoir,Ice Cream Bar,200.0,11.0,23.0,3.0,60.0,False,True,True,False,False,0,1,1,1,0,0
+Birthday Cake Ice Cream,lenoir,Top of Lenoir,Ice Cream Bar,180.0,8.0,27.0,2.0,55.0,False,True,True,False,False,0,1,1,1,0,0
+Gummy Bears,lenoir,Top of Lenoir,Ice Cream Bar,100.0,0.0,23.0,2.0,5.0,False,False,False,False,False,0,1,1,1,0,0
+Chocolate Sprinkles,lenoir,Top of Lenoir,Ice Cream Bar,20.0,1.0,3.0,0.0,0.0,False,True,True,False,False,0,1,1,1,0,0
+Rainbow Sprinkles,lenoir,Top of Lenoir,Ice Cream Bar,25.0,1.0,4.0,0.0,0.0,True,True,True,False,False,0,1,1,1,0,0
+Oreo® Cookie Crumbs,lenoir,Top of Lenoir,Ice Cream Bar,70.0,2.5,10.0,1.0,45.0,True,True,False,False,False,0,1,1,1,0,0
+Graham Cracker Crumbs,lenoir,Top of Lenoir,Ice Cream Bar,35.0,0.5,6.0,0.0,35.0,True,True,False,False,False,0,1,1,1,0,0
+Chopped M&Ms®,lenoir,Top of Lenoir,Ice Cream Bar,60.0,2.0,9.0,1.0,10.0,False,True,True,False,False,0,1,1,1,0,0
+Gummy Candy,lenoir,Top of Lenoir,Ice Cream Bar,100.0,0.0,22.0,1.0,15.0,False,False,True,False,False,0,1,1,1,0,0
+BBQ Soy Nuggets,lenoir,Top of Lenoir,Plant Forward,360.0,13.0,52.0,11.0,980.0,True,True,False,False,False,0,1,0,0,0,0
+Edamame,lenoir,Top of Lenoir,Plant Forward,120.0,5.0,9.0,10.0,20.0,True,True,True,True,False,0,1,0,0,0,0
+Grilled Peppers,lenoir,Top of Lenoir,Plant Forward,50.0,3.5,6.0,1.0,170.0,True,True,True,True,False,0,1,0,0,0,0
+Chef Mashed Potatoes,lenoir,Top of Lenoir,Plant Forward,100.0,3.0,17.0,2.0,90.0,False,True,True,False,False,0,1,0,0,0,0
+Chicken Shawarma,lenoir,Top of Lenoir,Simply Prepared,170.0,8.0,3.0,25.0,350.0,False,False,True,True,False,0,1,0,0,0,0
+Saffron Rice,lenoir,Top of Lenoir,Simply Prepared,90.0,0.0,20.0,2.0,0.0,True,True,True,True,False,0,1,0,0,0,0
+Sauteed Squash,lenoir,Top of Lenoir,Simply Prepared,50.0,4.0,5.0,1.0,65.0,True,True,True,True,False,0,1,0,0,0,0
+Roasted Harissa Carrots,lenoir,Top of Lenoir,Simply Prepared,50.0,0.5,11.0,1.0,150.0,True,True,True,False,False,0,1,0,0,0,0
+Lemon Cake (Made Without Gluten),lenoir,Top of Lenoir,Specialty Bakery,170.0,6.0,16.0,2.0,90.0,False,True,True,False,False,0,1,1,1,0,0
+Vegan Red Velvet Crinkle Cookies,lenoir,Top of Lenoir,Specialty Bakery,90.0,2.5,17.0,1.0,70.0,True,True,False,False,False,0,1,1,1,0,0
+Sweet Potato Bread Pudding,lenoir,Top of Lenoir,Specialty Bakery,300.0,8.0,50.0,7.0,290.0,False,True,False,False,False,0,1,1,1,0,0
+Boston Cream Cupcakes,lenoir,Top of Lenoir,Specialty Bakery,170.0,5.0,30.0,2.0,250.0,False,True,False,False,False,0,1,1,1,0,0
+Rice Krispie Treats,lenoir,Top of Lenoir,Specialty Bakery,170.0,6.0,29.0,1.0,85.0,False,False,True,False,False,0,1,1,1,0,0
+Fudge Brownies,lenoir,Top of Lenoir,Specialty Bakery,250.0,7.0,44.0,3.0,200.0,False,True,False,False,False,0,1,1,1,0,0
+Assorted Cookies,lenoir,Top of Lenoir,Specialty Bakery,130.0,6.0,17.0,1.0,100.0,False,True,False,False,False,0,1,1,1,0,0
+Italian Sausage,lenoir,Top of Lenoir,Pasta Bar,290.0,25.0,3.0,14.0,600.0,False,False,True,False,False,0,1,0,1,0,0
+Roasted Squash and Zucchini,lenoir,Top of Lenoir,Pasta Bar,45.0,2.5,5.0,1.0,65.0,True,True,True,True,False,0,1,0,1,0,0
+Whole Grain Penne,lenoir,Top of Lenoir,Pasta Bar,100.0,0.0,20.0,3.0,5.0,True,True,False,True,False,0,1,0,1,0,0
+Pasta Noodles,lenoir,Top of Lenoir,Pasta Bar,100.0,0.0,21.0,3.0,5.0,True,True,False,True,False,0,1,0,1,0,0
+Meat Sauce,lenoir,Top of Lenoir,Pasta Bar,90.0,6.0,7.0,4.0,110.0,False,False,True,False,False,0,1,0,1,0,0
+Marinara Sauce,lenoir,Top of Lenoir,Pasta Bar,45.0,1.0,7.0,1.0,100.0,True,True,True,True,False,0,1,0,1,0,0
+White Alfredo Sauce,lenoir,Top of Lenoir,Pasta Bar,180.0,13.0,10.0,6.0,310.0,False,True,True,False,False,0,1,0,1,0,0
+Broccoli Ravioli,lenoir,Top of Lenoir,International Flavors,670.0,34.0,65.0,26.0,1280.0,False,True,False,False,False,0,1,1,0,0,0
+Soy Nuggets,lenoir,Top of Lenoir,International Flavors,160.0,9.0,11.0,8.0,280.0,True,True,False,False,False,0,1,1,1,0,0
+Sausage & Kale Penne,lenoir,Top of Lenoir,International Flavors,240.0,8.0,31.0,13.0,280.0,False,False,False,False,False,0,1,0,1,0,0
+Dinner Rolls,lenoir,Top of Lenoir,International Flavors,110.0,3.0,17.0,3.0,190.0,False,True,False,False,False,0,1,0,1,0,0
+Chickpea Pasta (Made Without Gluten),lenoir,Top of Lenoir,International Flavors,190.0,3.5,34.0,12.0,0.0,True,True,True,False,False,0,1,1,1,0,0
+Marinara Sauce,lenoir,Top of Lenoir,International Flavors,45.0,1.0,7.0,1.0,100.0,True,True,True,True,False,0,1,1,1,0,0
+Cheese Pizza,lenoir,Top of Lenoir,Pizza,180.0,7.0,21.0,10.0,370.0,False,True,False,False,False,0,1,1,1,0,0
+Pepperoni Pizza,lenoir,Top of Lenoir,Pizza,230.0,12.0,21.0,12.0,570.0,False,False,False,False,False,0,1,1,1,0,0
+Cheese Bread,lenoir,Top of Lenoir,Pizza,150.0,6.0,20.0,6.0,290.0,False,True,False,False,False,0,1,1,1,0,0
+Vegan Cheese Pizza,lenoir,Top of Lenoir,Pizza,140.0,3.0,25.0,4.0,290.0,True,True,False,True,False,0,1,1,1,0,0
+Primavera Pizza,lenoir,Top of Lenoir,Pizza,270.0,7.0,43.0,10.0,490.0,False,True,False,False,False,0,1,1,1,0,0
+Vegan Chorizo,lenoir,Top of Lenoir,Burritos & Bowls,100.0,6.0,7.0,9.0,400.0,True,True,True,False,False,0,1,0,1,0,0
+Southwest Chicken Thigh,lenoir,Top of Lenoir,Burritos & Bowls,110.0,9.0,0.0,5.0,40.0,False,False,True,True,False,0,1,0,1,0,0
+Deli Chipotle Mayonnaise,lenoir,Top of Lenoir,Burritos & Bowls,210.0,23.0,2.0,0.0,190.0,False,True,True,False,False,0,1,0,1,0,0
+Cilantro Lime Rice,lenoir,Top of Lenoir,Burritos & Bowls,100.0,0.0,22.0,2.0,290.0,True,True,True,False,False,0,1,0,1,0,0
+Brown Rice,lenoir,Top of Lenoir,Burritos & Bowls,80.0,0.0,17.0,2.0,0.0,True,True,True,True,False,0,1,0,1,0,0
+Shredded Cheddar Cheese,lenoir,Top of Lenoir,Burritos & Bowls,60.0,4.5,0.77,3.0,90.0,False,True,True,False,False,0,1,0,1,0,0
+Monterey Jack Cheese,lenoir,Top of Lenoir,Burritos & Bowls,100.0,9.0,0.0,6.0,180.0,False,True,True,False,False,0,1,0,1,0,0
+Seasoned Black Beans,lenoir,Top of Lenoir,Burritos & Bowls,120.0,0.5,21.0,7.0,125.0,True,True,True,False,False,0,1,0,1,0,0
+Pepper Onion Sautee,lenoir,Top of Lenoir,Burritos & Bowls,110.0,1.0,22.0,3.0,5.0,True,True,True,True,False,0,1,0,1,0,0
+Guacamole,lenoir,Top of Lenoir,Burritos & Bowls,25.0,2.0,1.0,0.0,65.0,True,True,True,False,False,0,1,0,1,0,0
+Pico de Gallo,lenoir,Top of Lenoir,Burritos & Bowls,5.0,0.0,2.0,0.0,85.0,True,True,True,False,False,0,1,0,1,0,0
+Salsa Verde,lenoir,Top of Lenoir,Burritos & Bowls,5.0,0.0,1.0,0.0,70.0,True,True,True,True,False,0,1,0,1,0,0
+Lettuce,lenoir,Top of Lenoir,Burritos & Bowls,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,0,1,0,0
+Jalapeno Peppers,lenoir,Top of Lenoir,Burritos & Bowls,10.0,0.0,2.0,0.0,0.0,True,True,True,True,False,0,1,0,1,0,0
+Jalapeno Slaw,lenoir,Top of Lenoir,Burritos & Bowls,35.0,2.0,3.0,0.0,240.0,True,True,True,True,False,0,1,0,1,0,0
+Sour Cream,lenoir,Top of Lenoir,Burritos & Bowls,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,1,0,1,0,0
+Flour Tortilla,lenoir,Top of Lenoir,Burritos & Bowls,210.0,4.5,36.0,4.0,440.0,True,True,False,False,False,0,1,0,1,0,0
+Roasted Corn Potato Chowder,lenoir,Top of Lenoir,Homemade Soups & Sushi,130.0,4.0,20.0,3.0,410.0,True,True,True,True,False,0,1,1,1,0,0
+Chipotle Mayonnaise,lenoir,Top of Lenoir,Homemade Soups & Sushi,210.0,23.0,0.8,0.0,160.0,False,True,True,False,False,0,1,1,1,0,0
+Chicken & Wild Rice Soup,lenoir,Top of Lenoir,Homemade Soups & Sushi,80.0,1.0,13.0,5.0,135.0,False,False,True,False,False,0,1,1,1,0,0
+Creamy Queso Dip,lenoir,Top of Lenoir,Homemade Soups & Sushi,130.0,10.0,4.0,6.0,360.0,False,True,True,False,False,0,1,1,1,0,0
+Tortilla Chips,lenoir,Top of Lenoir,Homemade Soups & Sushi,240.0,15.0,24.0,2.0,390.0,True,True,True,False,False,0,1,1,1,0,0
+Salsa,lenoir,Top of Lenoir,Homemade Soups & Sushi,10.0,0.0,0.65,0.0,0.0,True,True,True,False,False,0,1,1,1,0,0
+Sushi Avocado Roll,lenoir,Top of Lenoir,Homemade Soups & Sushi,160.0,7.0,22.0,2.0,55.0,False,True,True,False,False,0,1,1,1,0,0
+Spicy Cucumber Roll,lenoir,Top of Lenoir,Homemade Soups & Sushi,120.0,4.0,19.0,2.0,50.0,False,True,True,False,False,0,1,1,1,0,0
+Soy Sauce,lenoir,Top of Lenoir,Homemade Soups & Sushi,10.0,0.0,2.0,1.0,1170.0,True,True,False,False,False,0,1,1,1,0,0
+Wasabi,lenoir,Top of Lenoir,Homemade Soups & Sushi,20.0,0.0,5.0,0.57,20.0,True,True,True,True,False,0,1,1,1,0,0
+Pickled Ginger,lenoir,Top of Lenoir,Homemade Soups & Sushi,0.0,0.0,0.0,0.0,45.0,True,True,True,False,False,0,1,1,1,0,0
+Tomato and Spinach Melt,lenoir,Top of Lenoir,The Grill,630.0,41.0,50.0,18.0,990.0,False,True,False,False,False,0,1,0,0,0,0
+Black Bean Burger Patty,lenoir,Top of Lenoir,The Grill,120.0,3.0,16.0,11.0,730.0,True,True,False,False,False,0,1,1,1,0,0
+Shoestring Fries,lenoir,Top of Lenoir,The Grill,290.0,17.0,27.0,1.0,520.0,True,True,True,True,False,0,1,1,0,0,0
+Lettuce,lenoir,Top of Lenoir,The Grill,0.0,0.0,0.52,0.0,5.0,True,True,True,True,False,0,1,1,1,0,0
+Tomatoes,lenoir,Top of Lenoir,The Grill,0.0,0.0,0.67,0.0,35.0,True,True,True,False,False,0,1,1,1,0,0
+Sliced Red Onion,lenoir,Top of Lenoir,The Grill,15.0,0.0,4.0,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Hamburger Bun,lenoir,Top of Lenoir,The Grill,240.0,4.5,43.0,7.0,380.0,False,True,False,True,False,0,1,1,1,0,0
+Sliced Dill Pickles,lenoir,Top of Lenoir,The Grill,0.0,0.0,0.6,0.0,350.0,True,True,True,False,False,0,1,1,1,0,0
+Sliced Cheddar Cheese,lenoir,Top of Lenoir,The Grill,60.0,4.5,0.0,3.0,95.0,False,True,True,False,False,0,1,1,1,0,0
+Vegan Sliced Cheese,lenoir,Top of Lenoir,The Grill,60.0,4.5,4.0,0.0,180.0,True,True,True,True,False,0,1,1,1,0,0
+Udi's® Gluten-Free Hamburger Bun,lenoir,Top of Lenoir,The Grill,190.0,5.0,32.0,5.0,360.0,False,True,True,True,False,0,1,1,1,0,0
+Spring Salad Mix,lenoir,Top of Lenoir,Salad Bar,15.0,0.0,2.0,1.0,50.0,True,True,True,True,False,0,1,1,1,0,0
+Sunflower Seeds,lenoir,Top of Lenoir,Salad Bar,35.0,3.0,1.0,1.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Croutons,lenoir,Top of Lenoir,Salad Bar,60.0,2.0,10.0,2.0,180.0,False,True,False,False,False,0,1,1,1,0,0
+Baby Spinach,lenoir,Top of Lenoir,Salad Bar,5.0,0.0,0.75,1.0,30.0,True,True,True,True,False,0,1,1,1,0,0
+Iceberg Lettuce,lenoir,Top of Lenoir,Salad Bar,10.0,0.0,2.0,0.51,5.0,True,True,True,True,False,0,1,1,1,0,0
+Cucumbers,lenoir,Top of Lenoir,Salad Bar,0.0,0.0,0.84,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Grape Tomatoes,lenoir,Top of Lenoir,Salad Bar,10.0,0.0,2.0,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Beets,lenoir,Top of Lenoir,Salad Bar,10.0,0.0,2.0,0.0,55.0,True,True,True,True,False,0,1,1,1,0,0
+Green Peppers,lenoir,Top of Lenoir,Salad Bar,5.0,0.0,1.0,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Shredded Carrots,lenoir,Top of Lenoir,Salad Bar,10.0,0.0,3.0,0.0,25.0,True,True,True,True,False,0,1,1,1,0,0
+Sliced Red Onion,lenoir,Top of Lenoir,Salad Bar,15.0,0.0,4.0,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Green Peas,lenoir,Top of Lenoir,Salad Bar,90.0,0.0,16.0,6.0,120.0,True,True,True,True,False,0,1,1,1,0,0
+Banana Peppers,lenoir,Top of Lenoir,Salad Bar,0.0,0.0,0.0,0.0,630.0,True,True,True,True,False,0,1,1,1,0,0
+Diced Chicken,lenoir,Top of Lenoir,Salad Bar,100.0,2.0,0.0,19.0,210.0,False,False,True,True,False,0,1,1,1,0,0
+Bacon Pieces,lenoir,Top of Lenoir,Salad Bar,120.0,8.0,1.0,11.0,430.0,False,False,True,False,False,0,1,1,1,0,0
+Garbanzo Beans,lenoir,Top of Lenoir,Salad Bar,35.0,0.5,6.0,2.0,60.0,True,True,True,False,False,0,1,1,1,0,0
+Red Kidney Beans,lenoir,Top of Lenoir,Salad Bar,50.0,0.0,9.0,4.0,60.0,True,True,True,True,False,0,1,1,1,0,0
+Edamame,lenoir,Top of Lenoir,Salad Bar,160.0,7.0,12.0,14.0,30.0,True,True,True,True,False,0,1,1,1,0,0
+Quinoa,lenoir,Top of Lenoir,Salad Bar,170.0,3.0,30.0,7.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Tofu,lenoir,Top of Lenoir,Salad Bar,120.0,7.0,2.0,13.0,10.0,True,True,True,False,False,0,1,1,1,0,0
+Feta Cheese Crumbles,lenoir,Top of Lenoir,Salad Bar,160.0,12.0,2.0,10.0,630.0,False,True,True,False,False,0,1,1,1,0,0
+Red Grapes,lenoir,Top of Lenoir,Salad Bar,80.0,0.0,21.0,1.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Cage-Free Hard-Boiled Egg,lenoir,Top of Lenoir,Salad Bar,80.0,5.0,0.56,6.0,60.0,False,True,True,True,False,0,1,1,1,0,0
+Shredded Cheddar Cheese,lenoir,Top of Lenoir,Salad Bar,60.0,4.5,0.77,3.0,90.0,False,True,True,False,False,0,1,1,1,0,0
+Ranch Dressing,lenoir,Top of Lenoir,Salad Bar,100.0,11.0,0.98,0.0,250.0,False,True,True,False,False,0,1,1,1,0,0
+Honey Mustard,lenoir,Top of Lenoir,Salad Bar,70.0,6.0,3.0,0.0,75.0,False,True,True,True,False,0,1,1,1,0,0
+Italian Dressing,lenoir,Top of Lenoir,Salad Bar,110.0,12.0,2.0,0.0,270.0,True,True,True,False,False,0,1,1,1,0,0
+Blue Cheese Dressing,lenoir,Top of Lenoir,Salad Bar,150.0,16.0,1.0,1.0,250.0,False,True,True,False,False,0,1,1,1,0,0
+Creamy Caesar Dressing,lenoir,Top of Lenoir,Salad Bar,290.0,31.0,2.0,2.0,550.0,False,False,True,False,False,0,1,1,1,0,0
+Balsamic Vinaigrette,lenoir,Top of Lenoir,Salad Bar,180.0,20.0,2.0,0.0,90.0,True,True,True,False,False,0,1,1,1,0,0
+Oil and Vinegar,lenoir,Top of Lenoir,Salad Bar,190.0,21.0,1.0,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Hummus,lenoir,Top of Lenoir,Hummus Bar,60.0,4.0,4.0,1.0,55.0,True,True,True,False,False,0,1,1,1,0,0
+Roasted Red Pepper Hummus,lenoir,Top of Lenoir,Hummus Bar,70.0,5.0,5.0,2.0,135.0,True,True,True,True,False,0,1,1,1,0,0
+Pita Bread,lenoir,Top of Lenoir,Hummus Bar,190.0,4.0,32.0,6.0,370.0,False,True,False,True,False,0,1,1,1,0,0
+Antipasto Salad,lenoir,Top of Lenoir,Hummus Bar,390.0,33.0,6.0,18.0,1710.0,False,False,True,False,False,0,1,1,1,0,0
+Caesar Pasta Salad,lenoir,Top of Lenoir,Hummus Bar,210.0,12.0,20.0,5.0,260.0,False,False,False,False,False,0,1,1,1,0,0
+Mediterranean White Bean Salad,lenoir,Top of Lenoir,Hummus Bar,90.0,5.0,9.0,2.0,260.0,True,True,True,False,False,0,1,1,1,0,0
+Triple B Salad,lenoir,Top of Lenoir,Hummus Bar,110.0,6.0,11.0,4.0,180.0,False,True,True,False,False,0,1,1,1,0,0
+Tzatziki Sauce,lenoir,Top of Lenoir,Hummus Bar,60.0,4.5,3.0,1.0,160.0,True,True,True,True,False,0,1,1,1,0,0
+Bulgar Tabbouleh,lenoir,Top of Lenoir,Hummus Bar,270.0,7.0,46.0,8.0,190.0,True,True,False,False,False,0,1,1,1,0,0
+Cucumber & Tomato Salad,lenoir,Top of Lenoir,Hummus Bar,35.0,0.0,7.0,1.0,75.0,True,True,True,True,False,0,1,1,1,0,0
+Chickpeas with Peppers and Feta,lenoir,Top of Lenoir,Hummus Bar,170.0,9.0,16.0,7.0,420.0,False,True,True,False,False,0,1,1,1,0,0
+Baby Carrots,lenoir,Top of Lenoir,Hummus Bar,160.0,0.5,41.0,4.0,280.0,True,True,True,True,False,0,1,1,1,0,0
+Sliced Mixed Bell Peppers,lenoir,Top of Lenoir,Hummus Bar,15.0,0.0,3.0,1.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Potato Chips,lenoir,Top of Lenoir,Deli,480.0,30.0,46.0,5.0,500.0,True,True,True,True,False,0,1,1,1,0,0
+Sourdough,lenoir,Top of Lenoir,Deli,90.0,1.0,20.0,4.0,190.0,True,True,False,True,False,0,1,1,1,0,0
+Provolone Cheese,lenoir,Top of Lenoir,Deli,80.0,6.0,0.75,5.0,180.0,False,True,True,False,False,0,1,1,1,0,0
+Sundried Tomato Basil Wrap,lenoir,Top of Lenoir,Deli,310.0,6.0,52.0,8.0,710.0,True,True,False,True,False,0,1,1,1,0,0
+Garlic & Herb Wrap,lenoir,Top of Lenoir,Deli,300.0,7.0,52.0,8.0,700.0,True,True,False,True,False,0,1,1,1,0,0
+Spinach Wrap,lenoir,Top of Lenoir,Deli,300.0,7.0,52.0,8.0,630.0,True,True,False,True,False,0,1,1,1,0,0
+Sliced Ham,lenoir,Top of Lenoir,Deli,110.0,5.0,2.0,14.0,890.0,False,False,True,False,False,0,1,1,1,0,0
+Sliced Roast Beef,lenoir,Top of Lenoir,Deli,70.0,3.0,0.0,10.0,460.0,False,False,True,False,False,0,1,1,1,0,0
+Sliced Turkey,lenoir,Top of Lenoir,Deli,110.0,1.0,5.0,18.0,1100.0,False,False,True,False,False,0,1,1,1,0,0
+Tuna Salad,lenoir,Top of Lenoir,Deli,280.0,24.0,1.0,17.0,400.0,False,False,True,False,False,0,1,1,1,0,0
+Chunky Chicken Salad,lenoir,Top of Lenoir,Deli,60.0,5.0,2.0,1.0,200.0,False,False,False,False,False,0,1,1,1,0,0
+American Cheese,lenoir,Top of Lenoir,Deli,50.0,4.0,1.0,3.0,150.0,False,True,True,False,False,0,1,1,1,0,0
+Pepper Jack Cheese,lenoir,Top of Lenoir,Deli,50.0,4.0,0.51,4.0,85.0,False,True,True,False,False,0,1,1,1,0,0
+Vegan American Sliced Cheese,lenoir,Top of Lenoir,Deli,60.0,4.5,4.0,0.0,180.0,True,True,True,False,False,0,1,1,1,0,0
+Cheddar Cheese,lenoir,Top of Lenoir,Deli,230.0,19.0,2.0,13.0,370.0,False,True,True,False,False,0,1,1,1,0,0
+Swiss Cheese,lenoir,Top of Lenoir,Deli,60.0,4.0,0.62,4.0,70.0,False,True,True,False,False,0,1,1,1,0,0
+Black Olives,lenoir,Top of Lenoir,Deli,120.0,10.0,7.0,1.0,870.0,True,True,True,False,False,0,1,1,1,0,0
+Lettuce,lenoir,Top of Lenoir,Deli,0.0,0.0,0.52,0.0,5.0,True,True,True,True,False,0,1,1,1,0,0
+Sliced Dill Pickles,lenoir,Top of Lenoir,Deli,0.0,0.0,0.6,0.0,350.0,True,True,True,False,False,0,1,1,1,0,0
+Banana Peppers,lenoir,Top of Lenoir,Deli,0.0,0.0,0.0,0.0,630.0,True,True,True,True,False,0,1,1,1,0,0
+Tomatoes,lenoir,Top of Lenoir,Deli,0.0,0.0,0.67,0.0,35.0,True,True,True,False,False,0,1,1,1,0,0
+Sliced Red Onion,lenoir,Top of Lenoir,Deli,15.0,0.0,4.0,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Jalapeno Peppers,lenoir,Top of Lenoir,Deli,10.0,0.0,2.0,0.0,0.0,True,True,True,True,False,0,1,1,1,0,0
+Oil and Vinegar,lenoir,Top of Lenoir,Deli,90.0,11.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,0,0
+Yellow Mustard,lenoir,Top of Lenoir,Deli,0.0,0.0,3.0,0.0,160.0,True,True,True,True,False,0,1,1,1,0,0
+Mayonnaise,lenoir,Top of Lenoir,Deli,100.0,11.0,1.0,0.0,75.0,False,True,True,False,False,0,1,1,1,0,0
+Deli Chipotle Mayonnaise,lenoir,Top of Lenoir,Deli,210.0,23.0,2.0,0.0,190.0,False,True,True,False,False,0,1,1,1,0,0
+Udi's® Multigrain Bread,lenoir,Top of Lenoir,Deli,140.0,5.0,23.0,2.0,260.0,False,True,True,True,False,0,1,1,1,0,0
+Rye Bread Slice,lenoir,Top of Lenoir,Deli,90.0,2.5,15.0,3.0,230.0,True,True,False,True,False,0,1,1,1,0,0
+Hoagie Roll,lenoir,Top of Lenoir,Deli,240.0,0.0,39.0,8.0,470.0,True,True,False,True,False,0,1,1,1,0,0
+Wheat Bread Slice,lenoir,Top of Lenoir,Deli,0.0,0.0,0.0,0.0,0.0,True,True,False,True,False,0,1,1,1,0,0
+Udi's® White Bread,lenoir,Top of Lenoir,Deli,140.0,5.0,24.0,2.0,270.0,False,True,True,True,False,0,1,1,1,0,0
+Classic Cheeseburger,lenoir,Top of Lenoir,The Grill,400.0,31.0,9.0,19.0,2560.0,False,False,False,False,False,0,0,1,0,0,0
+Mojo Grilled Chicken,lenoir,Top of Lenoir,The Kitchen Table,190.0,8.0,2.0,25.0,60.0,False,False,True,True,False,0,0,0,1,0,0
+Southwest Black Beans,lenoir,Top of Lenoir,The Kitchen Table,110.0,0.5,21.0,7.0,360.0,True,True,True,True,False,0,0,0,1,0,0
+Fried Plantains,lenoir,Top of Lenoir,The Kitchen Table,340.0,17.0,51.0,2.0,5.0,True,True,True,True,False,0,0,0,1,0,0
+Roasted Garlic Rice,lenoir,Top of Lenoir,The Kitchen Table,100.0,1.0,21.0,2.0,55.0,True,True,True,True,False,0,0,0,1,0,0
+Mojo Dressing,lenoir,Top of Lenoir,The Kitchen Table,70.0,6.0,3.0,0.0,25.0,True,True,True,True,False,0,0,0,1,0,0
+General Tso's Crispy Tofu,lenoir,Top of Lenoir,Plant Forward,180.0,9.0,14.0,8.0,400.0,True,True,False,False,False,0,0,0,1,0,0
+Jasmine Rice,lenoir,Top of Lenoir,Plant Forward,100.0,0.0,22.0,2.0,0.0,True,True,True,False,False,0,0,0,1,0,0
+Steamed Bok Choy,lenoir,Top of Lenoir,Plant Forward,15.0,0.0,4.0,1.0,20.0,True,True,True,True,False,0,0,0,1,0,0
+Steamed Baby Carrots,lenoir,Top of Lenoir,Plant Forward,35.0,0.0,9.0,1.0,75.0,True,True,True,True,False,0,0,0,1,0,0
+Cajun Chicken,lenoir,Top of Lenoir,Simply Prepared,250.0,14.0,5.0,25.0,670.0,False,False,True,True,False,0,0,0,1,0,0
+Potato Hash,lenoir,Top of Lenoir,Simply Prepared,130.0,2.0,26.0,2.0,370.0,True,True,True,True,False,0,0,0,1,0,0
+Sauteed Mushrooms & Red Onions,lenoir,Top of Lenoir,Simply Prepared,160.0,11.0,10.0,4.0,150.0,False,True,True,True,False,0,0,0,1,0,0
+Sauteed Spinach,lenoir,Top of Lenoir,Simply Prepared,70.0,4.0,5.0,5.0,230.0,True,True,True,False,False,0,0,0,1,0,0
+Red Curry Chicken Bowl,lenoir,Top of Lenoir,International Flavors,350.0,13.0,38.0,17.0,270.0,False,False,True,False,False,0,0,0,1,0,0
+Spicy Cilantro Turkey Burger,lenoir,Top of Lenoir,The Grill,390.0,15.0,32.0,23.0,550.0,False,False,False,False,False,0,0,0,1,0,0
+Twister Fries,lenoir,Top of Lenoir,The Grill,300.0,22.0,27.0,3.0,480.0,False,True,False,True,False,0,0,0,1,0,0
+Waffle,chase,Chase Hall,Waffle Bar,90.0,0.5,20.0,3.0,270.0,False,True,False,True,False,1,1,1,1,1,1
+Pancake Syrup,chase,Chase Hall,Waffle Bar,70.0,0.0,19.0,0.0,25.0,True,True,True,False,False,1,1,1,1,1,1
+Mixed Berries,chase,Chase Hall,Waffle Bar,35.0,0.0,9.0,0.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Whipped Topping,chase,Chase Hall,Waffle Bar,110.0,9.0,6.0,0.0,40.0,True,True,True,True,False,1,1,1,1,1,1
+Butterscotch Scones (Made Without Gluten),chase,Chase Hall,Bakery,210.0,9.0,14.0,2.0,190.0,False,False,True,False,False,1,0,0,0,0,0
+Vegan Banana Muffin,chase,Chase Hall,Bakery,380.0,10.0,71.0,5.0,280.0,True,True,False,False,False,1,0,0,0,0,0
+Mini Donuts,chase,Chase Hall,Bakery,130.0,6.0,17.0,2.0,220.0,False,True,False,False,False,1,0,0,0,0,0
+Apple Cinnamon Overnight Chia Oats,chase,Chase Hall,Bakery,450.0,12.0,73.0,14.0,270.0,False,True,False,True,False,1,0,0,0,0,0
+Lemon Poppyseed Muffin,chase,Chase Hall,Bakery,190.0,9.0,27.0,2.0,150.0,True,True,False,True,False,1,0,0,0,0,0
+Apple Turnover,chase,Chase Hall,Bakery,410.0,29.0,34.0,5.0,240.0,False,True,False,False,False,1,0,0,0,0,0
+Cinnamon Rolls,chase,Chase Hall,Bakery,180.0,5.0,30.0,3.0,210.0,False,True,False,False,False,1,0,0,0,0,0
+Sun Butter®,chase,Chase Hall,Bakery,180.0,15.0,6.0,6.0,110.0,True,True,True,True,False,1,1,1,1,1,1
+Smart Balance Buttery Spread,chase,Chase Hall,Bakery,80.0,9.0,0.0,0.0,0.0,False,True,True,False,False,1,1,1,1,1,1
+Grape Jelly,chase,Chase Hall,Bakery,50.0,0.0,13.0,0.0,0.0,True,True,True,False,False,1,1,1,1,1,1
+Strawberry Cream Cheese,chase,Chase Hall,Bakery,90.0,8.0,5.0,1.0,120.0,False,True,True,True,False,1,1,1,1,1,1
+Housemade Veggie Cream Cheese,chase,Chase Hall,Bakery,70.0,6.0,2.0,1.0,115.0,False,True,True,False,False,1,1,1,1,1,1
+Cream Cheese,chase,Chase Hall,Bakery,100.0,9.0,1.0,2.0,110.0,False,True,True,False,False,1,1,1,1,1,1
+Assorted Cookies,chase,Chase Hall,Bakery,130.0,6.0,17.0,1.0,100.0,False,True,False,False,False,1,1,1,1,1,1
+Impossible™ Sausage Patty,chase,Chase Hall,The Kitchen Table,110.0,7.0,5.0,6.0,320.0,True,True,True,True,False,1,0,0,0,0,1
+Old Fashioned Oatmeal,chase,Chase Hall,The Kitchen Table,150.0,3.0,27.0,5.0,5.0,True,True,False,True,False,1,0,0,0,0,0
+Grits,chase,Chase Hall,The Kitchen Table,120.0,0.0,28.0,3.0,100.0,True,True,True,True,False,1,0,0,0,0,0
+Whole Wheat French Toast,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,False,True,False,False,False,1,0,0,0,0,1
+Pancake Syrup,chase,Chase Hall,The Kitchen Table,70.0,0.0,19.0,0.0,25.0,True,True,True,False,False,1,0,0,0,0,1
+Breakfast Potatoes,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,1,0,0,0,0,0
+Bacon,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,1,0,0,0,0,1
+Scrambled Eggs,chase,Chase Hall,The Kitchen Table,200.0,15.0,0.0,14.0,190.0,False,True,True,True,False,1,0,0,0,0,1
+Tofu Florentine,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,1,0,0,0,0,0
+Biscuit,chase,Chase Hall,The Kitchen Table,260.0,12.0,35.0,5.0,840.0,False,True,False,False,False,1,0,0,0,0,1
+Sausage Gravy,chase,Chase Hall,The Kitchen Table,180.0,11.0,13.0,7.0,180.0,False,False,True,False,False,1,0,0,0,0,1
+Bacon & Cheese Omelet,chase,Chase Hall,The Griddle,400.0,28.0,2.0,29.0,690.0,False,False,True,False,False,1,0,0,0,0,0
+Spinach & Cheese Omelet,chase,Chase Hall,The Griddle,150.0,12.0,2.0,10.0,170.0,False,True,True,False,False,1,0,0,0,0,0
+Hashbrown Potatoes,chase,Chase Hall,The Griddle,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,1,0,0,0,0,0
+Strawberry Banana Greek Yogurt Smoothie,chase,Chase Hall,Made-to-Order,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,1,1,0,0,0,0
+'The Heeler' Blueberry Smoothie,chase,Chase Hall,Made-to-Order,120.0,0.5,29.0,1.0,0.0,True,True,True,True,False,1,1,0,0,0,0
+Applesauce,chase,Chase Hall,Salad Bar,60.0,0.0,16.0,0.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Cottage Cheese,chase,Chase Hall,Salad Bar,90.0,1.5,6.0,13.0,340.0,False,True,True,True,False,1,1,1,1,1,1
+Yogurt Strawberry,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,1,0,0,0,0,0
+Vanilla Yogurt,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,1,0,0,0,0,0
+Plain Greek Yogurt,chase,Chase Hall,Salad Bar,170.0,9.0,7.0,15.0,60.0,True,True,True,True,False,1,1,1,1,1,1
+Red Grapes,chase,Chase Hall,Salad Bar,80.0,0.0,21.0,1.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Diced Pineapple,chase,Chase Hall,Salad Bar,35.0,0.0,9.0,1.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Honeydew Melon,chase,Chase Hall,Salad Bar,40.0,0.0,10.0,1.0,20.0,True,True,True,True,False,1,1,1,1,1,1
+Cantaloupe,chase,Chase Hall,Salad Bar,30.0,0.0,7.0,1.0,25.0,True,True,True,True,False,1,1,1,1,1,1
+Bob's Red Mill® Gluten Free Oats,chase,Chase Hall,Stress Less Cabinet,210.0,5.0,33.0,7.0,160.0,True,True,True,True,False,1,1,1,1,1,1
+Made Good Mini Soft Red Velvet Cookies,chase,Chase Hall,Stress Less Cabinet,120.0,6.0,14.0,1.0,65.0,True,True,True,True,False,1,1,1,1,1,1
+Made Good Soft Mini Snickerdoodle,chase,Chase Hall,Stress Less Cabinet,110.0,6.0,0.0,1.0,65.0,True,True,True,True,False,1,1,1,1,1,1
+Made Good Vanilla Crispy Squares,chase,Chase Hall,Stress Less Cabinet,80.0,0.5,18.0,1.0,100.0,True,True,True,True,False,1,1,1,1,1,1
+Dolci di Maria® GF Brownie,chase,Chase Hall,Stress Less Cabinet,380.0,19.0,53.0,3.0,40.0,False,True,True,False,False,1,1,1,1,1,1
+Bob's Red Mill® GF Apple & Cinnamon Oats,chase,Chase Hall,Stress Less Cabinet,270.0,5.0,48.0,7.0,310.0,True,True,True,True,False,1,1,1,1,1,1
+Dolci di Maria Carrot Cake,chase,Chase Hall,Stress Less Cabinet,550.0,27.0,73.0,6.0,500.0,False,True,False,True,False,1,1,1,1,1,1
+MadeGood® Soft Baked Chocolate Chip Cookie,chase,Chase Hall,Stress Less Cabinet,120.0,6.0,14.0,1.0,65.0,True,True,True,True,False,1,1,1,1,1,1
+MadeGood® Soft Baked Double Chocolate Cookies,chase,Chase Hall,Stress Less Cabinet,120.0,6.0,14.0,1.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+O'Doughs® Everything Bagel,chase,Chase Hall,Stress Less Cabinet,200.0,4.5,38.0,4.0,530.0,True,True,True,True,False,1,1,1,1,1,1
+O'Doughs® Multigrain Sandwich Slices,chase,Chase Hall,Stress Less Cabinet,160.0,2.0,33.0,3.0,340.0,True,True,True,True,False,1,1,1,1,1,1
+Katz® Brown Sugar Toaster Pastries,chase,Chase Hall,Stress Less Cabinet,440.0,14.0,80.0,4.0,460.0,True,True,True,True,False,1,1,1,1,1,1
+O'Doughs® Original Sandwich Slices,chase,Chase Hall,Stress Less Cabinet,160.0,2.0,34.0,3.0,330.0,True,True,True,True,False,1,1,1,1,1,1
+O'Doughs® Pumpernickel Bagel,chase,Chase Hall,Stress Less Cabinet,200.0,6.0,38.0,5.0,350.0,True,True,True,True,False,1,1,1,1,1,1
+Udi's® Everything Bagel,chase,Chase Hall,Stress Less Cabinet,240.0,8.0,37.0,5.0,390.0,False,True,True,True,False,1,1,1,1,1,1
+Udi's® Gluten-Free Hamburger Bun,chase,Chase Hall,Stress Less Cabinet,190.0,5.0,32.0,5.0,360.0,False,True,True,True,False,1,1,1,1,1,1
+Udi's® Multigrain Bread,chase,Chase Hall,Stress Less Cabinet,140.0,5.0,23.0,2.0,260.0,False,True,True,True,False,1,1,1,1,1,1
+Udi's® Snickerdoodle Cookie,chase,Chase Hall,Stress Less Cabinet,220.0,8.0,36.0,1.0,150.0,False,True,True,False,False,1,1,1,1,1,1
+Udi's® White Bread,chase,Chase Hall,Stress Less Cabinet,140.0,5.0,24.0,2.0,270.0,False,True,True,True,False,1,1,1,1,1,1
+Caulipower Cheese Cauliflower Crust Pizza,chase,Chase Hall,Stress Less Freezer,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,1,1,1,1,1,1
+Caulipower Pepperoni Pizza Cauliflower Crust,chase,Chase Hall,Stress Less Freezer,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,1,1,1,1,1,1
+"Feel Good Foods Chicken, Bean and Cheese Burrito",chase,Chase Hall,Stress Less Freezer,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Amy's® Bean and Rice Burrito,chase,Chase Hall,Stress Less Freezer,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,1,1,1,1,1,1
+Amy's® Vegan Rice Mac & Cheeze,chase,Chase Hall,Stress Less Freezer,520.0,22.0,72.0,8.0,740.0,True,True,True,False,False,1,1,1,1,1,1
+Amy's® Black Bean Vegetable Enchilada,chase,Chase Hall,Stress Less Freezer,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,1,1,1,1,1,1
+"Amy's® Burrito with Cheese, Beans & Rice",chase,Chase Hall,Stress Less Freezer,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,1,1,1,1,1,1
+Wheat Bread Slice,chase,Chase Hall,Bagels and Breads,0.0,0.0,0.0,0.0,0.0,True,True,False,True,False,1,1,1,1,1,1
+White Bread,chase,Chase Hall,Bagels and Breads,60.0,0.0,12.0,2.0,125.0,True,True,False,False,False,1,1,1,1,1,1
+Multigrain Bagel,chase,Chase Hall,Bagels and Breads,270.0,2.0,56.0,11.0,580.0,True,True,False,True,False,1,1,1,1,1,1
+Blueberry Bagel,chase,Chase Hall,Bagels and Breads,290.0,0.0,61.0,9.0,530.0,True,True,False,True,False,1,1,1,1,1,1
+Poppy Seed Bagel,chase,Chase Hall,Bagels and Breads,290.0,0.5,59.0,10.0,560.0,True,True,False,True,False,1,1,1,1,1,1
+Sesame Bagel,chase,Chase Hall,Bagels and Breads,290.0,0.5,59.0,10.0,570.0,True,True,False,True,False,1,1,1,1,1,1
+Whole Wheat Bagel,chase,Chase Hall,Bagels and Breads,280.0,0.0,58.0,9.0,580.0,True,True,False,True,False,1,1,1,1,1,1
+Everything Bagel,chase,Chase Hall,Bagels and Breads,290.0,0.0,59.0,10.0,580.0,True,True,False,True,False,1,1,1,1,1,1
+French Toast Bagel,chase,Chase Hall,Bagels and Breads,280.0,0.0,59.0,9.0,600.0,True,True,False,True,False,1,1,1,1,1,1
+Cinnamon Raisin Bagel,chase,Chase Hall,Bagels and Breads,290.0,0.0,60.0,9.0,540.0,True,True,False,True,False,1,1,1,1,1,1
+Cheddar Jalapeno Bagel,chase,Chase Hall,Bagels and Breads,290.0,1.5,62.0,10.0,580.0,False,True,False,True,False,1,1,1,1,1,1
+Plain Bagel,chase,Chase Hall,Bagels and Breads,290.0,0.0,59.0,10.0,590.0,True,True,False,True,False,1,1,1,1,1,1
+Apple Jacks®,chase,Chase Hall,Cereal,110.0,1.0,23.0,0.0,170.0,False,True,False,True,False,1,1,1,1,1,1
+Rice Krispies®,chase,Chase Hall,Cereal,0.0,0.0,0.0,0.0,0.0,False,True,False,False,False,1,1,1,1,1,1
+Cinnamon Toast Crunch™,chase,Chase Hall,Cereal,120.0,2.5,23.0,0.91,200.0,False,True,False,True,False,1,1,1,1,1,1
+Frosted Flakes®,chase,Chase Hall,Cereal,130.0,0.0,33.0,2.0,190.0,True,True,False,True,False,1,1,1,1,1,1
+Cocoa Puffs™,chase,Chase Hall,Cereal,0.0,0.0,0.0,0.0,0.0,False,True,False,True,False,1,1,1,1,1,1
+Lucky Charms™,chase,Chase Hall,Cereal,110.0,1.0,22.0,2.0,170.0,False,False,True,False,False,1,1,1,1,1,1
+Cheerios™,chase,Chase Hall,Cereal,80.0,1.0,16.0,3.0,100.0,False,True,True,True,False,1,1,1,1,1,1
+Froot Loops®,chase,Chase Hall,Cereal,0.0,0.0,0.0,0.0,0.0,False,True,False,True,False,1,1,1,1,1,1
+Oats and Honey Granola,chase,Chase Hall,Cereal,130.0,3.0,21.0,3.0,25.0,False,True,False,False,False,1,1,1,1,1,1
+Ketchup,chase,Chase Hall,Condiments and Spreads,20.0,0.0,5.0,0.0,180.0,True,True,True,True,False,1,1,1,1,1,1
+Honey,chase,Chase Hall,Condiments and Spreads,45.0,0.0,11.0,0.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+BBQ Sauce,chase,Chase Hall,Condiments and Spreads,70.0,0.0,18.0,0.0,290.0,True,True,True,False,False,1,1,1,1,1,1
+Sriracha Sauce,chase,Chase Hall,Condiments and Spreads,5.0,0.0,1.0,0.0,105.0,True,True,True,True,False,1,1,1,1,1,1
+Yellow Mustard,chase,Chase Hall,Condiments and Spreads,0.0,0.0,3.0,0.0,160.0,True,True,True,True,False,1,1,1,1,1,1
+Ranch,chase,Chase Hall,Condiments and Spreads,0.0,0.0,0.0,0.0,0.0,False,True,True,True,False,1,1,1,1,1,1
+Texas Pete® Hot Sauce,chase,Chase Hall,Condiments and Spreads,0.0,0.0,0.0,0.0,115.0,True,True,True,True,False,1,1,1,1,1,1
+Oil and Vinegar,chase,Chase Hall,Condiments and Spreads,190.0,21.0,1.0,0.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Original Creamer,chase,Chase Hall,Condiments and Spreads,20.0,1.0,2.0,0.0,5.0,False,True,True,False,False,1,1,1,1,1,1
+French Vanilla Creamer,chase,Chase Hall,Condiments and Spreads,35.0,1.5,5.0,0.0,5.0,False,True,True,False,False,1,1,1,1,1,1
+Hazelnut Creamer,chase,Chase Hall,Condiments and Spreads,35.0,1.5,5.0,0.0,5.0,False,True,True,False,False,1,1,1,1,1,1
+Smart Balance Buttery Spread,chase,Chase Hall,Condiments and Spreads,80.0,9.0,0.0,0.0,0.0,False,True,True,False,False,1,1,1,1,1,1
+Whipped Topping,chase,Chase Hall,Condiments and Spreads,25.0,2.0,2.0,0.0,0.0,False,True,False,False,False,1,1,1,1,1,1
+Strawberry Preserves,chase,Chase Hall,Condiments and Spreads,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Raspberry Preserves,chase,Chase Hall,Condiments and Spreads,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Bubbly Lime,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,60.0,True,True,True,True,False,1,1,1,1,1,1
+Soymilk,chase,Chase Hall,Beverages,180.0,8.0,23.0,4.0,160.0,True,True,True,True,False,1,1,1,1,1,1
+Chocolate Peamilk,chase,Chase Hall,Beverages,140.0,6.0,15.0,8.0,190.0,True,True,True,True,False,1,1,1,1,1,1
+Oatmilk,chase,Chase Hall,Beverages,180.0,8.0,23.0,4.0,160.0,True,True,True,True,False,1,1,1,1,1,1
+Hot Cocoa,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,1,1,1,1,1,1
+100% Cranberry Juice,chase,Chase Hall,Beverages,140.0,0.0,36.0,0.0,35.0,True,True,True,True,False,1,1,1,1,1,1
+Seasonal Apple Cider,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,1,1,1,1,1,1
+Starry,chase,Chase Hall,Beverages,150.0,0.0,39.0,0.0,35.0,True,True,True,True,False,1,1,1,1,1,1
+2% Reduced Fat Milk,chase,Chase Hall,Beverages,120.0,5.0,12.0,8.0,125.0,False,True,True,True,False,1,1,1,1,1,1
+Skim Milk,chase,Chase Hall,Beverages,80.0,0.0,12.0,8.0,105.0,False,True,True,True,False,1,1,1,1,1,1
+1% Chocolate Milk,chase,Chase Hall,Beverages,150.0,2.5,26.0,8.0,230.0,False,True,True,True,False,1,1,1,1,1,1
+100% Apple Juice,chase,Chase Hall,Beverages,110.0,0.0,28.0,0.0,35.0,True,True,True,True,False,1,1,1,1,1,1
+100% Orange Juice,chase,Chase Hall,Beverages,120.0,0.0,31.0,0.0,35.0,True,True,True,False,False,1,1,1,1,1,1
+Strawberry Kiwi Juice,chase,Chase Hall,Beverages,120.0,0.0,30.0,0.0,40.0,True,True,True,False,False,1,1,1,1,1,1
+Larry's® Coffee,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,0.0,True,True,True,True,True,1,1,1,1,1,1
+Larry's® Decaf Coffee,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,0.0,True,True,True,True,True,1,1,1,1,1,1
+Southern Unsweet Tea,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,15.0,True,True,True,False,False,1,1,1,1,1,1
+Southern Sweet Tea,chase,Chase Hall,Beverages,130.0,0.0,32.0,0.0,15.0,True,True,True,False,False,1,1,1,1,1,1
+Dr. Pepper®,chase,Chase Hall,Beverages,140.0,0.0,39.0,0.0,45.0,True,True,True,True,False,1,1,1,1,1,1
+Diet Dr. Pepper®,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,70.0,True,True,True,True,False,1,1,1,1,1,1
+Root Beer,chase,Chase Hall,Beverages,140.0,0.0,39.0,0.0,45.0,True,True,True,True,False,1,1,1,1,1,1
+Sunkist® Orange,chase,Chase Hall,Beverages,160.0,0.0,44.0,0.0,45.0,True,True,True,False,False,1,1,1,1,1,1
+Tropicana® Lemonade,chase,Chase Hall,Beverages,150.0,0.0,40.0,0.0,150.0,True,True,True,False,False,1,1,1,1,1,1
+Tropicana® Fruit Punch,chase,Chase Hall,Beverages,170.0,0.0,45.0,0.0,35.0,True,True,True,False,False,1,1,1,1,1,1
+Mountain Dew®,chase,Chase Hall,Beverages,170.0,0.0,44.0,0.0,50.0,True,True,True,False,False,1,1,1,1,1,1
+Diet Mountain Dew®,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,55.0,True,True,True,False,False,1,1,1,1,1,1
+Cheerwine®,chase,Chase Hall,Beverages,150.0,0.0,42.0,0.0,25.0,True,True,True,True,False,1,1,1,1,1,1
+Pepsi® Zero Sugar,chase,Chase Hall,Beverages,0.0,0.0,0.0,0.0,65.0,True,True,True,False,False,1,1,1,1,1,1
+Pepsi®,chase,Chase Hall,Beverages,150.0,0.0,41.0,0.0,30.0,True,True,True,False,False,1,1,1,1,1,1
+Gatorade® Fruit Punch,chase,Chase Hall,Beverages,80.0,0.0,22.0,0.0,170.0,True,True,True,False,False,1,1,1,1,1,1
+Gatorade® Orange,chase,Chase Hall,Beverages,80.0,0.0,22.0,0.0,170.0,True,True,True,False,False,1,1,1,1,1,1
+Strawberry Cheesecake Ice Cream,chase,Chase Hall,Ice Cream,190.0,8.0,27.0,2.0,65.0,False,True,False,False,False,0,1,1,1,1,1
+Salted Caramel Craze Ice Cream,chase,Chase Hall,Ice Cream,230.0,10.0,32.0,3.0,180.0,False,True,True,False,False,0,1,1,1,1,1
+Vanilla Ice Cream,chase,Chase Hall,Ice Cream,170.0,9.0,21.0,3.0,50.0,False,True,True,True,False,0,1,1,1,1,1
+Mint Chocolate Chip Ice Cream,chase,Chase Hall,Ice Cream,200.0,11.0,23.0,3.0,60.0,False,True,True,False,False,0,1,1,1,1,1
+Gummy Bears,chase,Chase Hall,Ice Cream,100.0,0.0,23.0,2.0,5.0,False,False,False,False,False,0,1,1,1,1,1
+Chocolate Sprinkles,chase,Chase Hall,Ice Cream,20.0,1.0,3.0,0.0,0.0,False,True,True,False,False,0,1,1,1,1,1
+Rainbow Sprinkles,chase,Chase Hall,Ice Cream,25.0,1.0,4.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Oreo® Cookie Crumbs,chase,Chase Hall,Ice Cream,70.0,2.5,10.0,1.0,45.0,True,True,False,False,False,0,1,1,1,1,1
+Graham Cracker Crumbs,chase,Chase Hall,Ice Cream,35.0,0.5,6.0,0.0,35.0,True,True,False,False,False,0,1,1,1,1,1
+Chopped M&Ms®,chase,Chase Hall,Ice Cream,60.0,2.0,9.0,1.0,10.0,False,True,True,False,False,0,1,1,1,1,1
+Gummy Candy,chase,Chase Hall,Ice Cream,100.0,0.0,22.0,1.0,15.0,False,False,True,False,False,0,1,1,1,1,1
+Mango Sorbet,chase,Chase Hall,Ice Cream,120.0,0.0,31.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Chocolate Sauce,chase,Chase Hall,Ice Cream,110.0,9.0,7.0,0.0,5.0,False,True,True,False,False,0,1,1,1,1,1
+Caramel Sauce,chase,Chase Hall,Ice Cream,100.0,7.0,8.0,0.0,5.0,False,True,False,False,False,0,1,1,1,1,1
+Chocolate Filled Devil's Food Cake,chase,Chase Hall,Bakery,0.0,0.0,0.0,0.0,0.0,False,True,False,False,False,0,1,1,1,0,0
+Pineapple Upside-Down Parfait,chase,Chase Hall,Bakery,210.0,3.0,42.0,1.0,210.0,False,True,False,False,False,0,1,1,1,0,0
+Vegan Red Velvet Crinkle Cookies,chase,Chase Hall,Bakery,90.0,2.5,17.0,1.0,70.0,True,True,False,False,False,0,1,1,1,0,0
+Lemon Cake (Made Without Gluten),chase,Chase Hall,Bakery,170.0,6.0,16.0,2.0,90.0,False,True,True,False,False,0,1,1,1,0,0
+Rice Krispie Treats,chase,Chase Hall,Bakery,170.0,6.0,29.0,1.0,85.0,False,False,True,False,False,0,1,1,1,1,1
+Fudge Brownies,chase,Chase Hall,Bakery,250.0,7.0,44.0,3.0,200.0,False,True,False,False,False,0,1,1,1,1,1
+Herb Balsamic Beef Roast,chase,Chase Hall,Simply Prepared,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,0,1,0,0,0,0
+Cilantro Lime Rice,chase,Chase Hall,Simply Prepared,100.0,0.0,22.0,2.0,290.0,True,True,True,False,False,0,1,0,0,0,0
+Roasted Corn,chase,Chase Hall,Simply Prepared,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,0,0,0,0
+Roasted Asparagus,chase,Chase Hall,Simply Prepared,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,0,0,0,0
+Chipotle Lime Chicken,chase,Chase Hall,Simply Prepared Griddle,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,0,1,1,1,1,0
+Roasted Corn and Peppers,chase,Chase Hall,Simply Prepared Griddle,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Power Slaw Mix,chase,Chase Hall,Simply Prepared Griddle,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Long Grain Brown Rice,chase,Chase Hall,Simply Prepared Griddle,100.0,0.0,21.0,3.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Diced Zucchini,chase,Chase Hall,Simply Prepared Griddle,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Roasted Olive Oil Tomato Sauce,chase,Chase Hall,Simply Prepared Griddle,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Vegan Chipotle Sauce,chase,Chase Hall,Simply Prepared Griddle,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,0
+Lemon Honey Vinaigrette Dressing,chase,Chase Hall,Simply Prepared Griddle,0.0,0.0,0.0,0.0,0.0,False,True,True,True,False,0,1,1,1,1,0
+Shrimp and Mushroom Scampi,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,1,0,0,0,0
+Steamed Broccoli,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,0,0,0,0
+Garlic Bread,chase,Chase Hall,The Kitchen Table,220.0,8.0,29.0,4.0,420.0,False,True,False,False,False,0,1,0,0,0,0
+Bratwurst Peppers and Onions Roll,chase,Chase Hall,The Griddle,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,1,0,0,0,0
+Black Bean Burger Patty,chase,Chase Hall,The Griddle,120.0,3.0,16.0,11.0,730.0,True,True,False,False,False,0,1,1,1,1,1
+Grilled Cheese Sandwich,chase,Chase Hall,The Griddle,0.0,0.0,0.0,0.0,0.0,False,True,False,False,False,0,1,0,1,0,0
+Shoestring Fries,chase,Chase Hall,The Griddle,290.0,17.0,27.0,1.0,520.0,True,True,True,True,False,0,1,1,1,1,1
+Veggie Toppings,chase,Chase Hall,The Griddle,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Hamburger Bun,chase,Chase Hall,The Griddle,240.0,4.5,43.0,7.0,380.0,False,True,False,True,False,0,1,1,1,1,1
+American Cheese,chase,Chase Hall,The Griddle,50.0,4.0,1.0,3.0,150.0,False,True,True,False,False,0,1,1,1,1,1
+Udi's® Gluten-Free Hamburger Bun,chase,Chase Hall,The Griddle,190.0,5.0,32.0,5.0,360.0,False,True,True,True,False,0,1,1,1,1,1
+Vegan Sliced Cheese,chase,Chase Hall,The Griddle,60.0,4.5,4.0,0.0,180.0,True,True,True,True,False,0,1,1,1,1,1
+Vegan Italian-Style Sausage Sub,chase,Chase Hall,Vegan Plant Forward,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,0,0,0,0
+Sauteed Spinach,chase,Chase Hall,Vegan Plant Forward,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,0,0,0,0
+Pasta Salad,chase,Chase Hall,Vegan Plant Forward,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,0,0,0,0
+Fresh Potato Chips,chase,Chase Hall,Vegan Plant Forward,90.0,4.5,13.0,1.0,270.0,True,True,True,True,False,0,1,0,0,0,0
+Beijing Style Beef Sautee,chase,Chase Hall,International Flavors,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,1,0,0,0,0
+Soy Bites,chase,Chase Hall,International Flavors,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,0,1,0,0
+IP3 Vegan Cheese Pizza,chase,Chase Hall,Pizza,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,1,1,0,0
+IP3 Cheerwine® BBQ Chicken Pizza,chase,Chase Hall,Pizza,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,1,1,1,0,0
+IP3 Cheese Pizza,chase,Chase Hall,Pizza,0.0,0.0,0.0,0.0,0.0,False,True,False,False,False,0,1,1,1,0,0
+IP3 Margherita Pizza,chase,Chase Hall,Pizza,0.0,0.0,0.0,0.0,0.0,False,True,False,False,False,0,1,1,1,0,0
+IP3 Pepperoni Pizza,chase,Chase Hall,Pizza,250.0,12.0,26.0,12.0,520.0,False,False,False,False,False,0,1,1,1,0,0
+Sliced English Cucumber,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,0
+Edamame,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,0
+Sliced Avocado,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Pineapples,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,0
+Sliced Scallions,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Onion,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,1,1,1,1,0
+Diced Chicken,chase,Chase Hall,Sushi/Create,100.0,2.0,0.0,19.0,210.0,False,False,True,True,False,0,1,0,1,0,0
+Radish,chase,Chase Hall,Sushi/Create,0.0,0.0,0.96,0.0,10.0,True,True,True,True,False,0,1,1,1,1,0
+Sushi Rice,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Shredded Carrots,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Tofu,chase,Chase Hall,Sushi/Create,120.0,7.0,2.0,13.0,10.0,True,True,True,False,False,0,1,1,1,1,0
+Shredded Red Cabbage,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Poke Dressing,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,1,1,1,0
+Soy Sauce,chase,Chase Hall,Sushi/Create,10.0,0.0,2.0,1.0,1170.0,True,True,False,False,False,0,1,1,1,1,0
+Siracha Mayonnaise,chase,Chase Hall,Sushi/Create,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,1,1,1,1,0
+Chicken Broccoli Alfredo Pasta Bake,chase,Chase Hall,Pasta,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,1,0,1,0,0
+Penne Pasta (Made Without Gluten),chase,Chase Hall,Pasta,190.0,1.0,44.0,4.0,0.0,True,True,True,True,False,0,1,1,1,1,0
+Pasta Noodles,chase,Chase Hall,Pasta,100.0,0.0,21.0,3.0,5.0,True,True,False,True,False,0,1,1,1,1,0
+White Alfredo Sauce,chase,Chase Hall,Pasta,180.0,13.0,10.0,6.0,310.0,False,True,True,False,False,0,1,1,1,1,0
+Marinara Sauce,chase,Chase Hall,Pasta,45.0,1.0,7.0,1.0,100.0,True,True,True,True,False,0,1,1,1,1,0
+Cream of Broccoli Soup,chase,Chase Hall,Soups,0.0,0.0,0.0,0.0,0.0,False,True,False,False,False,0,1,1,1,0,0
+Chili con Carne,chase,Chase Hall,Soups,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,1,1,1,0,0
+White Bread (Made Without Gluten),chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,1,1,1,1,1
+Hoagie Roll,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,1,1,1,1
+Spinach Wrap,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,True,True,False,True,False,0,1,1,1,1,1
+Garlic Herb Wraps,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,True,True,False,True,False,0,1,1,1,1,1
+Sundried Tomato Wraps,chase,Chase Hall,Deli,300.0,8.0,49.0,8.0,680.0,True,True,False,True,False,0,1,1,1,1,1
+Sourdough,chase,Chase Hall,Deli,90.0,1.0,20.0,4.0,190.0,True,True,False,True,False,0,1,1,1,1,1
+Vegan Mayo,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Udi's® White Bread,chase,Chase Hall,Deli,140.0,5.0,24.0,2.0,270.0,False,True,True,True,False,0,1,1,1,1,1
+White Bread,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,1,1,1,1
+Whole Wheat Bread,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,1,1,1,1
+Honey Mustard Dressing,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,1,1,1,1,1
+Mayonnaise,chase,Chase Hall,Deli,100.0,11.0,1.0,0.0,75.0,False,True,True,False,False,0,1,1,1,1,1
+Yellow Mustard,chase,Chase Hall,Deli,0.0,0.0,3.0,0.0,160.0,True,True,True,True,False,0,1,1,1,1,1
+Spicy Brown Mustard,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Oil and Vinegar,chase,Chase Hall,Deli,90.0,11.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Chipotle Mayonnaise,chase,Chase Hall,Deli,210.0,23.0,0.8,0.0,160.0,False,True,True,False,False,0,1,1,1,1,1
+Sliced Dill Pickles,chase,Chase Hall,Deli,0.0,0.0,0.6,0.0,350.0,True,True,True,False,False,0,1,1,1,1,1
+Grilled Chicken Breast,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,0,1,1,1,1,1
+Sliced Ham,chase,Chase Hall,Deli,110.0,5.0,2.0,14.0,890.0,False,False,True,False,False,0,1,1,1,1,1
+Sliced Roast Beef,chase,Chase Hall,Deli,70.0,3.0,0.0,10.0,460.0,False,False,True,False,False,0,1,1,1,1,1
+Sliced Turkey,chase,Chase Hall,Deli,110.0,1.0,5.0,18.0,1100.0,False,False,True,False,False,0,1,1,1,1,1
+Tuna Salad,chase,Chase Hall,Deli,280.0,24.0,1.0,17.0,400.0,False,False,True,False,False,0,1,1,1,1,1
+Sliced Salami,chase,Chase Hall,Deli,180.0,15.0,2.0,8.0,690.0,False,False,True,False,False,0,1,1,1,1,1
+Chunky Chicken Salad,chase,Chase Hall,Deli,60.0,5.0,2.0,1.0,200.0,False,False,False,False,False,0,1,1,1,1,1
+Sliced Red Onion,chase,Chase Hall,Deli,15.0,0.0,4.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Tomatoes,chase,Chase Hall,Deli,0.0,0.0,0.67,0.0,35.0,True,True,True,False,False,0,1,1,1,1,1
+American Cheese,chase,Chase Hall,Deli,50.0,4.0,1.0,3.0,150.0,False,True,True,False,False,0,1,1,1,1,1
+Pepper Jack Cheese,chase,Chase Hall,Deli,50.0,4.0,0.51,4.0,85.0,False,True,True,False,False,0,1,1,1,1,1
+Swiss Cheese,chase,Chase Hall,Deli,60.0,4.0,0.62,4.0,70.0,False,True,True,False,False,0,1,1,1,1,1
+Cheddar Cheese,chase,Chase Hall,Deli,230.0,19.0,2.0,13.0,370.0,False,True,True,False,False,0,1,1,1,1,1
+Black Olives,chase,Chase Hall,Deli,120.0,10.0,7.0,1.0,870.0,True,True,True,False,False,0,1,1,1,1,1
+Lettuce,chase,Chase Hall,Deli,0.0,0.0,0.52,0.0,5.0,True,True,True,True,False,0,1,1,1,1,1
+Banana Peppers,chase,Chase Hall,Deli,0.0,0.0,0.0,0.0,630.0,True,True,True,True,False,0,1,1,1,1,1
+Jalapeno Peppers,chase,Chase Hall,Deli,10.0,0.0,2.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+O'Doughs® Original Sandwich Slices,chase,Chase Hall,Deli,160.0,2.0,34.0,3.0,330.0,True,True,True,True,False,0,1,1,1,1,1
+Vegan American Sliced Cheese,chase,Chase Hall,Deli,60.0,4.5,4.0,0.0,180.0,True,True,True,False,False,0,1,1,1,1,1
+Cucumber & Tomato Salad,chase,Chase Hall,Salad Bar,35.0,0.0,7.0,1.0,75.0,True,True,True,True,False,0,1,1,1,1,1
+Spinach Orzo Salad,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,False,True,False,0,1,1,1,1,1
+Nonfat Strawberry Yogurt,chase,Chase Hall,Salad Bar,120.0,0.0,24.0,6.0,95.0,False,True,True,False,False,0,1,1,1,1,1
+Nonfat Vanilla Yogurt,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,1,1,1,1,1
+Baby Spinach,chase,Chase Hall,Salad Bar,5.0,0.0,0.75,1.0,30.0,True,True,True,True,False,0,1,1,1,1,1
+Spring Salad Mix,chase,Chase Hall,Salad Bar,15.0,0.0,2.0,1.0,50.0,True,True,True,True,False,0,1,1,1,1,1
+Iceberg Lettuce,chase,Chase Hall,Salad Bar,10.0,0.0,2.0,0.51,5.0,True,True,True,True,False,0,1,1,1,1,1
+Cucumbers,chase,Chase Hall,Salad Bar,0.0,0.0,0.84,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Green Peppers,chase,Chase Hall,Salad Bar,5.0,0.0,1.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Feta Cheese Crumbles,chase,Chase Hall,Salad Bar,160.0,12.0,2.0,10.0,630.0,False,True,True,False,False,0,1,1,1,1,1
+Quinoa,chase,Chase Hall,Salad Bar,170.0,3.0,30.0,7.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Tofu,chase,Chase Hall,Salad Bar,120.0,7.0,2.0,13.0,10.0,True,True,True,False,False,0,1,1,1,1,1
+Diced Chicken,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,False,False,True,True,False,0,1,1,1,1,1
+Bacon Pieces,chase,Chase Hall,Salad Bar,120.0,8.0,1.0,11.0,430.0,False,False,True,False,False,0,1,1,1,1,1
+Toasted Sunflower Seeds,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Black Beans,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Red Kidney Beans,chase,Chase Hall,Salad Bar,50.0,0.0,9.0,4.0,60.0,True,True,True,True,False,0,1,1,1,1,1
+Garbanzo Beans,chase,Chase Hall,Salad Bar,35.0,0.5,6.0,2.0,60.0,True,True,True,False,False,0,1,1,1,1,1
+Chopped Hard Cooked Egg,chase,Chase Hall,Salad Bar,90.0,6.0,0.57,7.0,70.0,False,True,True,False,False,0,1,1,1,1,1
+Croutons,chase,Chase Hall,Salad Bar,60.0,2.0,10.0,2.0,180.0,False,True,False,False,False,0,1,1,1,1,1
+Dried Cranberries,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Raisins,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Hummus,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Shredded Cheddar Cheese,chase,Chase Hall,Salad Bar,60.0,4.5,0.77,3.0,90.0,False,True,True,False,False,0,1,1,1,1,1
+Banana Peppers,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,630.0,True,True,True,True,False,0,1,1,1,1,1
+Mushroom,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,1,1,1,1,1
+Beets,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Carrots,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Sliced Red Onion,chase,Chase Hall,Salad Bar,15.0,0.0,4.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Grape Tomatoes,chase,Chase Hall,Salad Bar,10.0,0.0,2.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Black Olives,chase,Chase Hall,Salad Bar,120.0,10.0,7.0,1.0,870.0,True,True,True,False,False,0,1,1,1,1,1
+Ranch Dressing,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,1,1,1,1,1
+Balsamic Vinaigrette,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Honey Mustard Dressing,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,1,1,1,1,1
+Lite Italian Dressing,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,1,1,1,1,1
+Blue Cheese Dressing,chase,Chase Hall,Salad Bar,150.0,16.0,1.0,1.0,250.0,False,True,True,False,False,0,1,1,1,1,1
+Caesar Dressing,chase,Chase Hall,Salad Bar,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,0,1,1,1,1,1
+Oil and Vinegar,chase,Chase Hall,Salad Bar,190.0,21.0,1.0,0.0,0.0,True,True,True,True,False,0,1,1,1,1,1
+Classic Cheeseburger,chase,Chase Hall,The Griddle,400.0,31.0,9.0,19.0,2560.0,False,False,False,False,False,0,0,1,0,1,0
+Pulled BBQ Lamb Sliders,chase,Chase Hall,Simply Prepared,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,0,0,1,0,0
+Corn on the Cob,chase,Chase Hall,Simply Prepared,120.0,5.0,20.0,3.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+Confetti Rice,chase,Chase Hall,Simply Prepared,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+Armenian-Style Roasted Vegetables,chase,Chase Hall,Simply Prepared,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,0,0,1,0,0
+Grilled Italian Sausage with Peppers & Onions,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,0,0,0,1,0,0
+Chef Garlic Mashed Potatoes,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,0,0,1,0,0
+Spicy Kale,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+Yellow Squash,chase,Chase Hall,The Kitchen Table,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+Grilled Pimento Cheese and Tomato Sandwich,chase,Chase Hall,The Griddle,480.0,28.0,41.0,15.0,660.0,False,True,False,False,False,0,0,0,1,0,0
+Eggplant Parmesan,chase,Chase Hall,Vegan Plant Forward,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,0,0,1,0,0
+Herb Spaghetti Pasta,chase,Chase Hall,Vegan Plant Forward,0.0,0.0,0.0,0.0,0.0,True,True,False,False,False,0,0,0,1,0,0
+Roasted Brussel Sprouts,chase,Chase Hall,Vegan Plant Forward,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+General Tso Chicken,chase,Chase Hall,International Flavors,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,0,0,1,0,0
+Santa Fe Beef,chase,Chase Hall,Build Your Own!,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,0,0,1,0,1
+Cajun Pinto Beans,chase,Chase Hall,Build Your Own!,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,0,0,1,0,0
+Queso Sauce,chase,Chase Hall,Build Your Own!,60.0,4.0,2.0,3.0,160.0,False,True,True,False,False,0,0,0,1,0,0
+Jalapeno Peppers,chase,Chase Hall,Build Your Own!,10.0,0.0,2.0,0.0,0.0,True,True,True,True,False,0,0,0,1,0,1
+Iceberg Lettuce,chase,Chase Hall,Build Your Own!,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+Shredded Cheddar Cheese,chase,Chase Hall,Build Your Own!,60.0,4.5,0.77,3.0,90.0,False,True,True,False,False,0,0,0,1,0,1
+Pico de Gallo,chase,Chase Hall,Build Your Own!,5.0,0.0,2.0,0.0,85.0,True,True,True,False,False,0,0,0,1,0,1
+Guacamole,chase,Chase Hall,Build Your Own!,0.0,0.0,0.0,0.0,0.0,True,True,True,False,False,0,0,0,1,0,1
+Sour Cream,chase,Chase Hall,Build Your Own!,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,0,0,1,0,1
+Tortilla Chips,chase,Chase Hall,Build Your Own!,240.0,15.0,24.0,2.0,390.0,True,True,True,False,False,0,0,0,1,0,1
+Cilantro Marinated Chicken,chase,Chase Hall,Made-to-Order,0.0,0.0,0.0,0.0,0.0,False,False,True,True,False,0,0,0,1,0,0
+Diced Ham,chase,Chase Hall,Made-to-Order,0.0,0.0,0.0,0.0,0.0,False,False,True,False,False,0,0,0,1,0,0
+Baby Spinach,chase,Chase Hall,Made-to-Order,5.0,0.0,0.75,1.0,30.0,True,True,True,True,False,0,0,0,1,0,0
+Sliced Mushroom,chase,Chase Hall,Made-to-Order,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+Sliced Onions,chase,Chase Hall,Made-to-Order,0.0,0.0,0.0,0.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+Sliced Mixed Bell Peppers,chase,Chase Hall,Made-to-Order,15.0,0.0,3.0,1.0,0.0,True,True,True,True,False,0,0,0,1,0,0
+White Alfredo Sauce,chase,Chase Hall,Made-to-Order,180.0,13.0,10.0,6.0,310.0,False,True,True,False,False,0,0,0,1,0,0
+Marinara Sauce,chase,Chase Hall,Made-to-Order,45.0,1.0,7.0,1.0,100.0,True,True,True,True,False,0,0,0,1,0,0
+Parmesan Cheese,chase,Chase Hall,Made-to-Order,0.0,0.0,0.0,0.0,0.0,False,True,True,False,False,0,0,0,1,0,0
+Pasta Noodles,chase,Chase Hall,Made-to-Order,100.0,0.0,21.0,3.0,5.0,True,True,False,True,False,0,0,0,1,0,0
+Matzah Crack,chase,Chase Hall,Bakery,0.0,0.0,0.0,0.0,0.0,False,True,False,True,False,0,0,0,0,1,1
+Pepperoni Pizza,chase,Chase Hall,Pizza,230.0,12.0,21.0,12.0,570.0,False,False,False,False,False,0,0,0,0,1,1
+Cheese Pizza,chase,Chase Hall,Pizza,180.0,7.0,21.0,10.0,370.0,False,True,False,False,False,0,0,0,0,1,1
+Cheese Bread,chase,Chase Hall,Pizza,0.0,0.0,0.0,0.0,0.0,False,True,False,False,False,0,0,0,0,1,1
+Vegan Cheese Pizza,chase,Chase Hall,Pizza,140.0,3.0,25.0,4.0,290.0,True,True,False,True,False,0,0,0,0,1,1
+Crispy Tater Tots,chase,Chase Hall,The Kitchen Table,120.0,6.0,15.0,1.0,330.0,True,True,True,True,False,0,0,0,0,0,1
+Boneless Wing Station,chase,Chase Hall,The Griddle,0.0,0.0,0.0,0.0,0.0,False,False,False,False,False,0,0,0,0,0,1

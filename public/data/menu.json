@@ -1,56 +1,432 @@
 {
-  "2026-04-19": {
+  "2026-04-20": {
     "chase": {
       "breakfast": [
-        "Belgian waffle station",
-        "Scrambled eggs",
-        "Stone-ground grits",
-        "Fresh fruit medley"
+        "Feel Good Foods Chicken, Bean and Cheese Burrito",
+        "Scrambled Eggs",
+        "Sausage Gravy",
+        "Impossible\u2122 Sausage Patty"
       ],
       "lunch": [
-        "Grilled lemon-herb chicken",
-        "Macaroni and cheese",
-        "Caesar salad",
-        "Vegetable stir-fry with tofu"
+        "Black Bean Burger Patty",
+        "Feel Good Foods Chicken, Bean and Cheese Burrito",
+        "Beijing Style Beef Sautee",
+        "Chipotle Lime Chicken",
+        "Herb Balsamic Beef Roast"
       ],
       "dinner": [
-        "Herb-roasted salmon",
-        "Beef taco bar",
-        "Minestrone soup",
-        "Roasted seasonal vegetables"
+        "Black Bean Burger Patty",
+        "Feel Good Foods Chicken, Bean and Cheese Burrito",
+        "Chipotle Lime Chicken",
+        "Cilantro Marinated Chicken",
+        "Eggplant Parmesan",
+        "General Tso Chicken"
       ]
     },
     "lenoir": {
       "breakfast": [
-        "Breakfast burrito bar",
-        "Steel-cut oatmeal",
-        "Bagels and cream cheese",
-        "Yogurt parfait with granola"
+        "Scrambled Eggs",
+        "Turmeric Tofu Scramble",
+        "Impossible\u2122 Sausage Patty",
+        "Hard Boiled Egg"
       ],
       "lunch": [
-        "Tomato basil soup",
-        "Turkey club sandwich",
-        "Mediterranean quinoa bowl",
-        "Pasta primavera"
+        "Honey BBQ Chicken",
+        "Hamburger Bun",
+        "Sausage & Kale Penne",
+        "Udi's\u00ae Gluten-Free Hamburger Bun",
+        "Chicken Shawarma"
       ],
       "dinner": [
-        "Rotisserie chicken",
-        "Penne arrabbiata",
-        "Mixed green salad",
-        "Chocolate chip cookies"
+        "Black Bean Burger Patty",
+        "Red Curry Chicken Bowl",
+        "Cajun Chicken",
+        "Hamburger Bun",
+        "Sausage & Kale Penne",
+        "Mojo Grilled Chicken"
       ]
     }
   },
-  "2026-04-20": {
+  "2026-04-21": {
     "chase": {
-      "breakfast": ["French toast", "Egg whites", "Hash browns", "Melon cup"],
-      "lunch": ["Chicken parmesan", "Minestrone", "Garden salad", "Veggie wrap"],
-      "dinner": ["Pulled pork sliders", "Baked potato bar", "Broccoli cheddar soup", "Steamed rice"]
+      "breakfast": [
+        "Impossible\u2122 Sausage Patty",
+        "Tofu Florentine",
+        "Udi's\u00ae Gluten-Free Hamburger Bun",
+        "Amy's\u00ae Black Bean Vegetable Enchilada",
+        "Amy's\u00ae Bean and Rice Burrito"
+      ],
+      "lunch": [
+        "Chipotle Lime Chicken",
+        "Herb Balsamic Beef Roast",
+        "Shrimp and Mushroom Scampi",
+        "Vegan Italian-Style Sausage Sub",
+        "Hamburger Bun",
+        "Udi's\u00ae Gluten-Free Hamburger Bun"
+      ],
+      "dinner": [
+        "Cilantro Marinated Chicken",
+        "Eggplant Parmesan",
+        "General Tso Chicken",
+        "Grilled Italian Sausage with Peppers & Onions"
+      ]
     },
     "lenoir": {
-      "breakfast": ["Pancake stack", "Greek yogurt", "Toast bar", "Apple slices"],
-      "lunch": ["Pho station", "Summer rolls", "Asian slaw", "Jasmine rice"],
-      "dinner": ["Burger night", "Sweet potato fries", "Coleslaw", "Brownie bites"]
+      "breakfast": [
+        "Hard Boiled Egg",
+        "Udi's\u00ae Gluten-Free Hamburger Bun",
+        "Sausage Gravy",
+        "Bacon & Cheese Omelet",
+        "Cheddar Omelet"
+      ],
+      "lunch": [
+        "Udi's\u00ae Gluten-Free Hamburger Bun",
+        "Chicken Shawarma",
+        "Seasoned Black Beans",
+        "Chickpea Pasta (Made Without Gluten)",
+        "Southwest Chicken Thigh",
+        "Italian Sausage"
+      ],
+      "dinner": [
+        "Hamburger Bun",
+        "Sausage & Kale Penne",
+        "Mojo Grilled Chicken",
+        "Udi's\u00ae Gluten-Free Hamburger Bun"
+      ]
+    }
+  },
+  "2026-04-22": {
+    "chase": {
+      "breakfast": [
+        "Amy's\u00ae Black Bean Vegetable Enchilada",
+        "Amy's\u00ae Bean and Rice Burrito",
+        "Amy's\u00ae Burrito with Cheese, Beans & Rice",
+        "Biscuit",
+        "'The Heeler' Blueberry Smoothie",
+        "Grits"
+      ],
+      "lunch": [
+        "Vegan Italian-Style Sausage Sub",
+        "Hamburger Bun",
+        "Udi's\u00ae Gluten-Free Hamburger Bun",
+        "Tofu"
+      ],
+      "dinner": [
+        "Grilled Italian Sausage with Peppers & Onions",
+        "Hamburger Bun",
+        "Udi's\u00ae Gluten-Free Hamburger Bun",
+        "Tofu",
+        "Diced Chicken"
+      ]
+    },
+    "lenoir": {
+      "breakfast": [
+        "Bacon & Cheese Omelet",
+        "Cheddar Omelet",
+        "Spinach & Cheese Omelet",
+        "Crispy Tater Tots",
+        "Cinnamon French Toast",
+        "Breakfast Vegetable Fried Rice"
+      ],
+      "lunch": [
+        "Chickpea Pasta (Made Without Gluten)",
+        "Southwest Chicken Thigh",
+        "Italian Sausage",
+        "Chickpeas with Peppers and Feta"
+      ],
+      "dinner": [
+        "Udi's\u00ae Gluten-Free Hamburger Bun",
+        "General Tso's Crispy Tofu",
+        "Seasoned Black Beans",
+        "Chickpea Pasta (Made Without Gluten)",
+        "Southwest Black Beans"
+      ]
+    }
+  },
+  "2026-04-23": {
+    "chase": {
+      "breakfast": [
+        "Biscuit",
+        "'The Heeler' Blueberry Smoothie",
+        "Grits",
+        "Old Fashioned Oatmeal"
+      ],
+      "lunch": [
+        "Tofu",
+        "Diced Chicken",
+        "Amy's\u00ae Black Bean Vegetable Enchilada",
+        "Amy's\u00ae Bean and Rice Burrito",
+        "Amy's\u00ae Burrito with Cheese, Beans & Rice"
+      ],
+      "dinner": [
+        "Tofu",
+        "Diced Chicken",
+        "Amy's\u00ae Black Bean Vegetable Enchilada",
+        "Cajun Pinto Beans",
+        "Santa Fe Beef",
+        "Amy's\u00ae Bean and Rice Burrito"
+      ]
+    },
+    "lenoir": {
+      "breakfast": [
+        "Crispy Tater Tots",
+        "Cinnamon French Toast",
+        "Breakfast Vegetable Fried Rice",
+        "Biscuit"
+      ],
+      "lunch": [
+        "Chickpeas with Peppers and Feta",
+        "Mediterranean White Bean Salad",
+        "Chicken & Wild Rice Soup",
+        "Broccoli Ravioli",
+        "Tomato and Spinach Melt"
+      ],
+      "dinner": [
+        "Chickpea Pasta (Made Without Gluten)",
+        "Southwest Black Beans",
+        "Southwest Chicken Thigh",
+        "Italian Sausage",
+        "Chickpeas with Peppers and Feta",
+        "Mediterranean White Bean Salad"
+      ]
+    }
+  },
+  "2026-04-24": {
+    "chase": {
+      "breakfast": [
+        "Old Fashioned Oatmeal",
+        "Bacon",
+        "Apple Turnover",
+        "Bacon & Cheese Omelet",
+        "Cinnamon Rolls"
+      ],
+      "lunch": [
+        "Amy's\u00ae Bean and Rice Burrito",
+        "Amy's\u00ae Burrito with Cheese, Beans & Rice",
+        "Chicken Broccoli Alfredo Pasta Bake",
+        "IP3 Cheerwine\u00ae BBQ Chicken Pizza",
+        "'The Heeler' Blueberry Smoothie",
+        "Garlic Bread"
+      ],
+      "dinner": [
+        "Cajun Pinto Beans",
+        "Santa Fe Beef",
+        "Amy's\u00ae Bean and Rice Burrito",
+        "Amy's\u00ae Burrito with Cheese, Beans & Rice"
+      ]
+    },
+    "lenoir": {
+      "breakfast": [
+        "Biscuit",
+        "Blueberry Scone",
+        "Blueberry Compote",
+        "Grits",
+        "Dolci di Maria Carrot Cake"
+      ],
+      "lunch": [
+        "Broccoli Ravioli",
+        "Tomato and Spinach Melt",
+        "BBQ Soy Nuggets",
+        "Flour Tortilla",
+        "Soy Nuggets",
+        "Edamame"
+      ],
+      "dinner": [
+        "Italian Sausage",
+        "Chickpeas with Peppers and Feta",
+        "Mediterranean White Bean Salad",
+        "Chicken & Wild Rice Soup"
+      ]
+    }
+  },
+  "2026-04-25": {
+    "chase": {
+      "breakfast": [
+        "Bacon & Cheese Omelet",
+        "Cinnamon Rolls",
+        "Spinach & Cheese Omelet",
+        "Breakfast Potatoes",
+        "Whole Wheat French Toast",
+        "Dolci di Maria Carrot Cake"
+      ],
+      "lunch": [
+        "IP3 Cheerwine\u00ae BBQ Chicken Pizza",
+        "'The Heeler' Blueberry Smoothie",
+        "Garlic Bread",
+        "Diced Zucchini"
+      ],
+      "dinner": [
+        "Amy's\u00ae Burrito with Cheese, Beans & Rice",
+        "Chicken Broccoli Alfredo Pasta Bake",
+        "IP3 Cheerwine\u00ae BBQ Chicken Pizza",
+        "Corn on the Cob",
+        "Sliced Mixed Bell Peppers"
+      ]
+    },
+    "lenoir": {
+      "breakfast": [
+        "Grits",
+        "Dolci di Maria Carrot Cake",
+        "Double Chocolate Chip Muffins",
+        "Dolci di Maria\u00ae GF Brownie",
+        "Blueberry Bagel",
+        "Cheddar Jalapeno Bagel"
+      ],
+      "lunch": [
+        "Flour Tortilla",
+        "Soy Nuggets",
+        "Edamame",
+        "Shoestring Fries"
+      ],
+      "dinner": [
+        "Chicken & Wild Rice Soup",
+        "Fried Plantains",
+        "Flour Tortilla",
+        "Sauteed Mushrooms & Red Onions",
+        "Soy Nuggets"
+      ]
+    }
+  },
+  "2026-04-26": {
+    "chase": {
+      "breakfast": [
+        "Breakfast Potatoes",
+        "Whole Wheat French Toast",
+        "Dolci di Maria Carrot Cake",
+        "Amy's\u00ae Vegan Rice Mac & Cheeze"
+      ],
+      "lunch": [
+        "Diced Zucchini",
+        "Power Slaw Mix",
+        "Roasted Asparagus",
+        "Roasted Corn",
+        "Roasted Corn and Peppers"
+      ],
+      "dinner": [
+        "Corn on the Cob",
+        "Sliced Mixed Bell Peppers",
+        "Baby Spinach",
+        "Armenian-Style Roasted Vegetables",
+        "Diced Ham",
+        "Diced Zucchini"
+      ]
+    },
+    "lenoir": {
+      "breakfast": [
+        "Dolci di Maria\u00ae GF Brownie",
+        "Blueberry Bagel",
+        "Cheddar Jalapeno Bagel",
+        "Cinnamon Raisin Bagel"
+      ],
+      "lunch": [
+        "Shoestring Fries",
+        "Cheddar-Chive Mashed Potatoes",
+        "Dinner Rolls",
+        "Pepper Onion Sautee",
+        "Monterey Jack Cheese"
+      ],
+      "dinner": [
+        "Sauteed Mushrooms & Red Onions",
+        "Soy Nuggets",
+        "Twister Fries",
+        "Potato Hash",
+        "Dinner Rolls",
+        "Pepper Onion Sautee"
+      ]
+    }
+  },
+  "2026-04-27": {
+    "chase": {
+      "breakfast": [
+        "Scrambled Eggs",
+        "Impossible\u2122 Sausage Patty",
+        "Breakfast Potatoes",
+        "Whole Wheat French Toast",
+        "Old Fashioned Oatmeal"
+      ],
+      "lunch": [
+        "Chipotle Lime Chicken",
+        "Black Bean Burger Patty",
+        "Roasted Asparagus",
+        "Power Slaw Mix",
+        "Diced Zucchini"
+      ],
+      "dinner": [
+        "General Tso Chicken",
+        "Cilantro Marinated Chicken",
+        "Armenian-Style Roasted Vegetables",
+        "Roasted Corn and Peppers",
+        "Baby Spinach"
+      ]
+    },
+    "lenoir": {
+      "breakfast": [
+        "Turmeric Tofu Scramble",
+        "Scrambled Eggs",
+        "Crispy Tater Tots",
+        "Blueberry Scone",
+        "Cinnamon Raisin Bagel"
+      ],
+      "lunch": [
+        "Chicken Shawarma",
+        "Southwest Chicken Thigh",
+        "Mediterranean White Bean Salad",
+        "Edamame",
+        "Broccoli Ravioli"
+      ],
+      "dinner": [
+        "Red Curry Chicken Bowl",
+        "Mojo Grilled Chicken",
+        "General Tso's Crispy Tofu",
+        "Sauteed Mushrooms & Red Onions",
+        "Chicken & Wild Rice Soup"
+      ]
+    }
+  },
+  "2026-04-28": {
+    "chase": {
+      "breakfast": [
+        "Tofu Florentine",
+        "Scrambled Eggs",
+        "Bacon",
+        "Biscuit"
+      ],
+      "lunch": [
+        "Herb Balsamic Beef Roast",
+        "Shrimp and Mushroom Scampi",
+        "Vegan Italian-Style Sausage Sub",
+        "Roasted Corn",
+        "Power Slaw Mix",
+        "Garlic Bread"
+      ],
+      "dinner": [
+        "Santa Fe Beef",
+        "Diced Ham",
+        "Eggplant Parmesan",
+        "Corn on the Cob"
+      ]
+    },
+    "lenoir": {
+      "breakfast": [
+        "Hard Boiled Egg",
+        "Bacon & Cheese Omelet",
+        "Blueberry Bagel",
+        "Grits"
+      ],
+      "lunch": [
+        "Sausage & Kale Penne",
+        "Chickpea Pasta (Made Without Gluten)",
+        "Tomato and Spinach Melt",
+        "Flour Tortilla",
+        "Soy Nuggets",
+        "Cheddar-Chive Mashed Potatoes"
+      ],
+      "dinner": [
+        "Cajun Chicken",
+        "Italian Sausage",
+        "Fried Plantains",
+        "Twister Fries"
+      ]
     }
   }
 }

@@ -1,4 +1,4 @@
-const MODEL = 'gemini-2.0-flash'
+const MODEL = 'gemini-2.5-flash'
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`
 
 function getApiKey() {
@@ -48,6 +48,48 @@ Output shape (all keys lowercase):
 }`
 }
 
+function buildChatPrompt(chatHistory, menuData) {
+  const menuJson = JSON.stringify(menuData ?? {}, null, 2)
+  const transcript = Array.isArray(chatHistory)
+    ? chatHistory
+        .filter((entry) => entry && typeof entry.text === 'string' && entry.text.trim())
+        .map((entry) => {
+          const role = entry.role === 'assistant' ? 'ASSISTANT' : 'USER'
+          return `${role}: ${entry.text.trim()}`
+        })
+        .join('\n')
+    : ''
+
+  return `You are AIMealPlanner's chatbot. Read the conversation and create a 7-day meal plan based on user requests.
+
+Conversation transcript:
+${transcript || 'USER: Generate me a balanced weekly meal plan.'}
+
+Menu data (JSON, keyed by date YYYY-MM-DD, then dining hall, then meal period with arrays of dish names):
+${menuJson}
+
+Rules:
+1. Infer user preferences from the conversation (diet, allergies, preferred hall, etc.).
+2. Every breakfast, lunch, and dinner value in plan must be copied verbatim from the provided menu data. Do not invent dish names.
+3. Sort menu date keys chronologically and map them to Monday, Tuesday, ... in order. If fewer than 7 dates exist, reuse the last available date's meals.
+4. If hall preference is unclear, default to "chase".
+5. Return ONLY valid JSON, with no markdown.
+
+Output JSON shape:
+{
+  "assistantMessage": "short helpful response summarizing assumptions and result",
+  "plan": {
+    "monday": { "breakfast": "...", "lunch": "...", "dinner": "..." },
+    "tuesday": { "breakfast": "...", "lunch": "...", "dinner": "..." },
+    "wednesday": { "breakfast": "...", "lunch": "...", "dinner": "..." },
+    "thursday": { "breakfast": "...", "lunch": "...", "dinner": "..." },
+    "friday": { "breakfast": "...", "lunch": "...", "dinner": "..." },
+    "saturday": { "breakfast": "...", "lunch": "...", "dinner": "..." },
+    "sunday": { "breakfast": "...", "lunch": "...", "dinner": "..." }
+  }
+}`
+}
+
 function extractTextFromResponse(data) {
   const parts = data?.candidates?.[0]?.content?.parts
   if (!Array.isArray(parts)) {
@@ -78,14 +120,46 @@ function parseModelJson(text) {
   }
 }
 
-/**
- * @param {object} preferences - e.g. { dietaryRestriction, allergies, diningHall, swipesRemaining }
- * @param {object} menuData - menu JSON keyed by date, hall, meal
- * @returns {Promise<object>} Parsed 7-day plan: { monday: { breakfast, lunch, dinner }, ... }
- */
-export async function generateMealPlan(preferences, menuData) {
+function parseMaybeJsonString(value) {
+  if (typeof value !== 'string' || !value.trim()) {
+    return null
+  }
+
+  try {
+    return parseModelJson(value)
+  } catch {
+    return null
+  }
+}
+
+function extractPlanPayload(result) {
+  if (!result || typeof result !== 'object') {
+    return null
+  }
+
+  const directCandidates = [
+    result.plan,
+    result.weekPlan,
+    result.mealPlan,
+    result.generatedPlan,
+  ]
+
+  for (const candidate of directCandidates) {
+    if (candidate && typeof candidate === 'object') {
+      return candidate
+    }
+
+    const parsedCandidate = parseMaybeJsonString(candidate)
+    if (parsedCandidate && typeof parsedCandidate === 'object') {
+      return parsedCandidate
+    }
+  }
+
+  return result
+}
+
+async function requestGeminiJson(prompt) {
   const apiKey = getApiKey()
-  const prompt = buildPrompt(preferences, menuData)
 
   const response = await fetch(`${GEMINI_URL}?key=${encodeURIComponent(apiKey)}`, {
     method: 'POST',
@@ -110,4 +184,36 @@ export async function generateMealPlan(preferences, menuData) {
 
   const text = extractTextFromResponse(data)
   return parseModelJson(text)
+}
+
+/**
+ * @param {object} preferences - e.g. { dietaryRestriction, allergies, diningHall, swipesRemaining }
+ * @param {object} menuData - menu JSON keyed by date, hall, meal
+ * @returns {Promise<object>} Parsed 7-day plan: { monday: { breakfast, lunch, dinner }, ... }
+ */
+export async function generateMealPlan(preferences, menuData) {
+  const prompt = buildPrompt(preferences, menuData)
+  return requestGeminiJson(prompt)
+}
+
+/**
+ * @param {Array<{role: 'user'|'assistant', text: string}>} chatHistory
+ * @param {object} menuData
+ * @returns {Promise<{assistantMessage: string, plan: object}>}
+ */
+export async function generateMealPlanFromChat(chatHistory, menuData) {
+  const prompt = buildChatPrompt(chatHistory, menuData)
+  const result = await requestGeminiJson(prompt)
+
+  const assistantMessage =
+    typeof result?.assistantMessage === 'string' && result.assistantMessage.trim()
+      ? result.assistantMessage.trim()
+      : 'I generated a 7-day meal plan from the current menu.'
+
+  const plan = extractPlanPayload(result)
+  if (!plan || typeof plan !== 'object') {
+    throw new Error('Model response did not include a valid meal plan object.')
+  }
+
+  return { assistantMessage, plan }
 }

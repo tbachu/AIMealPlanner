@@ -24,6 +24,19 @@ function minutesSinceLocalMidnight(date) {
   return date.getHours() * 60 + date.getMinutes()
 }
 
+function dateFromKey(dateKey) {
+  if (typeof dateKey !== 'string') {
+    return null
+  }
+
+  const [year, month, day] = dateKey.split('-').map(Number)
+  if (!year || !month || !day) {
+    return null
+  }
+
+  return new Date(year, month - 1, day)
+}
+
 function isMealOpen(mealKey, date) {
   const { startMin, endMin } = MEAL_WINDOWS[mealKey]
   const now = minutesSinceLocalMidnight(date)
@@ -36,10 +49,38 @@ function formatMealHours(mealKey) {
   return '4:30–9:00 p.m.'
 }
 
+function formatShortDate(dateKey) {
+  const parsed = dateFromKey(dateKey)
+  if (!parsed) {
+    return dateKey
+  }
+
+  return parsed.toLocaleDateString(undefined, {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+  })
+}
+
+function formatLongDate(dateKey) {
+  const parsed = dateFromKey(dateKey)
+  if (!parsed) {
+    return dateKey
+  }
+
+  return parsed.toLocaleDateString(undefined, {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  })
+}
+
 function Home() {
   const { menu, loading, error } = useMenu()
   const [hall, setHall] = useState('chase')
   const [now, setNow] = useState(() => new Date())
+  const [selectedDateKey, setSelectedDateKey] = useState('')
 
   useEffect(() => {
     const id = window.setInterval(() => setNow(new Date()), 30_000)
@@ -48,26 +89,70 @@ function Home() {
 
   const todayKey = useMemo(() => localISODate(now), [now])
 
-  const dayMenu = menu && typeof menu === 'object' ? menu[todayKey] : null
+  const availableDateKeys = useMemo(() => {
+    if (!menu || typeof menu !== 'object') {
+      return []
+    }
+
+    return Object.keys(menu).sort()
+  }, [menu])
+
+  const fallbackDateKey = useMemo(() => {
+    if (availableDateKeys.length === 0) {
+      return todayKey
+    }
+
+    if (availableDateKeys.includes(todayKey)) {
+      return todayKey
+    }
+
+    const nextAvailable = availableDateKeys.find((dateKey) => dateKey >= todayKey)
+    return nextAvailable ?? availableDateKeys[availableDateKeys.length - 1]
+  }, [availableDateKeys, todayKey])
+
+  const activeDateKey =
+    selectedDateKey && availableDateKeys.includes(selectedDateKey)
+      ? selectedDateKey
+      : fallbackDateKey
+  const isViewingToday = activeDateKey === todayKey
+
+  const dayMenu = menu && typeof menu === 'object' ? menu[activeDateKey] : null
   const hallMenu =
     dayMenu && hall in dayMenu && typeof dayMenu[hall] === 'object' ? dayMenu[hall] : null
 
-  const formattedToday = useMemo(
-    () =>
-      now.toLocaleDateString(undefined, {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-      }),
-    [now],
-  )
+  const formattedDate = useMemo(() => formatLongDate(activeDateKey), [activeDateKey])
 
   return (
     <section className="rounded-3xl border border-primary/20 bg-white/85 p-8 shadow-[0_24px_60px_-32px_rgba(75,156,211,0.65)] backdrop-blur">
       <p className="text-xs font-bold uppercase tracking-[0.24em] text-primary">Home</p>
       <h1 className="mt-3 text-4xl text-slate-900 sm:text-5xl">Today&apos;s dining halls</h1>
-      <p className="mt-2 text-slate-600">{formattedToday}</p>
+      <p className="mt-2 text-slate-600">{formattedDate}</p>
+
+      {!loading && !error && availableDateKeys.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {availableDateKeys.map((dateKey) => (
+            <button
+              key={dateKey}
+              type="button"
+              onClick={() => setSelectedDateKey(dateKey)}
+              className={[
+                'rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors',
+                dateKey === activeDateKey
+                  ? 'border-primary bg-primary text-white'
+                  : 'border-primary/25 bg-primary/5 text-primary hover:bg-primary/10',
+              ].join(' ')}
+            >
+              {formatShortDate(dateKey)}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {!loading && !error && availableDateKeys.length > 0 && !isViewingToday && (
+        <p className="mt-3 text-sm text-slate-600">
+          No menu is posted for today, so you&apos;re viewing the nearest available date.
+        </p>
+      )}
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm font-medium text-slate-700">Dining hall</p>
@@ -108,13 +193,14 @@ function Home() {
 
       {!loading && !error && !dayMenu && (
         <p className="mt-10 text-center text-slate-600">
-          No menu posted for <span className="font-semibold text-slate-800">{todayKey}</span>.
+          No menu data available.
         </p>
       )}
 
       {!loading && !error && dayMenu && !hallMenu && (
         <p className="mt-10 text-center text-slate-600">
-          No menu found for <span className="capitalize font-semibold text-slate-800">{hall}</span> today.
+          No menu found for <span className="capitalize font-semibold text-slate-800">{hall}</span> on{' '}
+          <span className="font-semibold text-slate-800">{activeDateKey}</span>.
         </p>
       )}
 
@@ -123,6 +209,12 @@ function Home() {
           {MEAL_ORDER.map((mealKey) => {
             const open = isMealOpen(mealKey, now)
             const items = Array.isArray(hallMenu[mealKey]) ? hallMenu[mealKey] : []
+            const statusLabel = isViewingToday ? (open ? 'Open' : 'Closed') : 'Scheduled'
+            const statusClass = isViewingToday
+              ? open
+                ? 'bg-emerald-100 text-emerald-800'
+                : 'bg-slate-200 text-slate-700'
+              : 'bg-primary/15 text-primary'
 
             return (
               <div key={mealKey}>
@@ -133,10 +225,10 @@ function Home() {
                     <span
                       className={[
                         'rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide',
-                        open ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-200 text-slate-700',
+                        statusClass,
                       ].join(' ')}
                     >
-                      {open ? 'Open' : 'Closed'}
+                      {statusLabel}
                     </span>
                   </div>
                 </div>
