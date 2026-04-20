@@ -148,6 +148,53 @@ const TREAT_SECTION_KEYWORDS = [
 
 const EXCLUDED_SECTIONS = ['beverages', 'condiments and spreads', 'cereal']
 const EXCLUDED_ITEM_KEYWORDS = ['ice cream']
+const BREAKFAST_STYLE_SECTION_KEYWORDS = [
+  'bagels and breads',
+  'breads and bagels',
+  'pastries',
+  'bakery',
+  'cereal',
+]
+const BREAKFAST_STYLE_ITEM_KEYWORDS = [
+  'bagel',
+  'toast',
+  'waffle',
+  'pancake',
+  'french toast',
+  'muffin',
+  'scone',
+  'croissant',
+  'donut',
+  'yogurt',
+  'parfait',
+  'granola',
+  'oatmeal',
+  'cereal',
+]
+const MEAL_STYLE_ALLOWLIST = {
+  lunch: ['sandwich', 'wrap', 'burger', 'bowl', 'salad', 'rice', 'pasta', 'taco', 'burrito'],
+  dinner: ['chicken', 'beef', 'pork', 'fish', 'shrimp', 'pasta', 'rice', 'bowl', 'stir fry', 'taco', 'burrito'],
+}
+const DINNER_LIGHT_ITEM_KEYWORDS = ['yogurt', 'parfait', 'bagel', 'muffin', 'granola', 'oatmeal', 'cereal', 'toast']
+const SNACK_SECTION_KEYWORDS = ['stress less cabinet']
+const DINNER_PROTEIN_ENTREE_KEYWORDS = [
+  'chicken',
+  'beef',
+  'pork',
+  'turkey',
+  'fish',
+  'salmon',
+  'tilapia',
+  'tuna',
+  'shrimp',
+  'tofu',
+  'tempeh',
+  'egg',
+  'omelet',
+  'omelette',
+  'burrito',
+  'burger',
+]
 
 const DESSERT_KEYWORDS = [
   'cake',
@@ -280,6 +327,49 @@ function isCondimentLike(item) {
   return false
 }
 
+function hasKeyword(text, keywords) {
+  return keywords.some((keyword) => text.includes(keyword))
+}
+
+function isMealAppropriate(item, mealKey) {
+  if (mealKey === 'breakfast') {
+    return true
+  }
+
+  const name = itemName(item)
+  const section = itemSection(item)
+  const breakfastLike =
+    hasKeyword(name, BREAKFAST_STYLE_ITEM_KEYWORDS) ||
+    hasKeyword(section, BREAKFAST_STYLE_SECTION_KEYWORDS)
+
+  if (!breakfastLike) {
+    return true
+  }
+
+  // Allow lunch/dinner staples even if their section naming is noisy.
+  const allowlist = MEAL_STYLE_ALLOWLIST[mealKey] ?? []
+  return hasKeyword(name, allowlist) || isMainItem(item)
+}
+
+function isDinnerLightItem(item) {
+  return hasKeyword(itemName(item), DINNER_LIGHT_ITEM_KEYWORDS)
+}
+
+function isHeartyEntree(item) {
+  const calories = toNumber(item?.calories)
+  const protein = toNumber(item?.protein)
+  if (isMainItem(item)) {
+    return true
+  }
+  return calories >= 180 && protein >= 14
+}
+
+function isDinnerProteinEntree(item) {
+  const name = itemName(item)
+  const proteinForwardName = hasKeyword(name, DINNER_PROTEIN_ENTREE_KEYWORDS)
+  return proteinForwardName || isHeartyEntree(item)
+}
+
 function foodTypeKey(item) {
   const name = itemName(item)
   let bestMatch = ''
@@ -291,6 +381,87 @@ function foodTypeKey(item) {
   if (bestMatch) return bestMatch
   const words = name.trim().split(/\s+/)
   return words[words.length - 1] || name
+}
+
+function foodFamilyKey(item) {
+  const name = itemName(item)
+  // Keep complementary components distinct so they can be paired
+  // (for example bun + patty), while still blocking true duplicates.
+  if (name.includes('bagel')) return 'bagel'
+  if (name.includes('yogurt')) return 'yogurt'
+  if (name.includes('parfait')) return 'parfait'
+  if (name.includes('oatmeal')) return 'oatmeal'
+  if (name.includes('granola')) return 'granola'
+  if (name.includes('pancake')) return 'pancake'
+  if (name.includes('waffle')) return 'waffle'
+  if (name.includes('muffin')) return 'muffin'
+  if (name.includes('cereal')) return 'cereal'
+  if (name.includes('toast')) return 'toast'
+
+  if (name.includes('burger bun') || name.includes('hamburger bun') || name.includes('bun')) {
+    return 'burger-bun'
+  }
+  if (name.includes('burger patty') || name.includes('black bean burger') || name.includes('patty')) {
+    return 'burger-patty'
+  }
+
+  const familyKeywords = [
+    'sandwich', 'wrap', 'burger', 'pizza',
+    'pasta', 'rice', 'bowl', 'salad', 'taco', 'burrito', 'omelet', 'egg',
+    'chicken', 'beef', 'pork', 'fish', 'shrimp', 'tofu', 'soup', 'bread',
+  ]
+
+  for (const keyword of familyKeywords) {
+    if (name.includes(keyword)) {
+      return keyword
+    }
+  }
+
+  return foodTypeKey(item)
+}
+
+function hasBurgerCombo(items) {
+  const names = items.map((item) => itemName(item))
+  const hasBun = names.some((name) => name.includes('burger bun') || name.includes('hamburger bun') || name.includes('bun'))
+  const hasPatty = names.some(
+    (name) => name.includes('burger patty') || name.includes('black bean burger') || name.includes('patty')
+  )
+  return hasBun && hasPatty
+}
+
+function hasBurgerBun(items) {
+  return items.some((item) => {
+    const name = itemName(item)
+    return name.includes('burger bun') || name.includes('hamburger bun') || name.includes('bun')
+  })
+}
+
+function hasBurgerPatty(items) {
+  return items.some((item) => {
+    const name = itemName(item)
+    return name.includes('burger patty') || name.includes('black bean burger') || name.includes('patty')
+  })
+}
+
+function orphanBurgerPenalty(items) {
+  const hasBun = hasBurgerBun(items)
+  const hasPatty = hasBurgerPatty(items)
+  if (hasBun === hasPatty) {
+    return 0
+  }
+  return 6.5
+}
+
+function hasDuplicateFamily(items) {
+  const seen = new Set()
+  for (const item of items) {
+    const family = foodFamilyKey(item)
+    if (seen.has(family)) {
+      return true
+    }
+    seen.add(family)
+  }
+  return false
 }
 
 function itemCategory(item) {
@@ -561,11 +732,19 @@ function sampleMeal(mealKey, poolInfo) {
   const counts = chooseCategoryCounts(mealKey, size, categories)
   const usedLocal = new Set()
   const usedTypeKeys = new Set()
+  const usedFamilyKeys = new Set()
 
   const pickWithTypeGuard = (pool, count, weightFn) => {
-    const available = pool.filter((item) => !usedTypeKeys.has(foodTypeKey(item)))
+    const available = pool.filter(
+      (item) =>
+        !usedTypeKeys.has(foodTypeKey(item)) &&
+        !usedFamilyKeys.has(foodFamilyKey(item))
+    )
     const picks = pickUniqueFromPool(available, count, usedLocal, weightFn)
-    for (const pick of picks) usedTypeKeys.add(foodTypeKey(pick))
+    for (const pick of picks) {
+      usedTypeKeys.add(foodTypeKey(pick))
+      usedFamilyKeys.add(foodFamilyKey(pick))
+    }
     return picks
   }
 
@@ -646,6 +825,17 @@ function scoreMeals(meals, goals, mealTargets) {
     comboPenalty(breakfast, 'breakfast') +
     comboPenalty(lunch, 'lunch') +
     comboPenalty(dinner, 'dinner')
+  const duplicateFamilyLoss =
+    (hasDuplicateFamily(breakfast) ? 18 : 0) +
+    (hasDuplicateFamily(lunch) ? 12 : 0) +
+    (hasDuplicateFamily(dinner) ? 12 : 0)
+  const burgerCoherenceLoss =
+    orphanBurgerPenalty(breakfast) +
+    orphanBurgerPenalty(lunch) +
+    orphanBurgerPenalty(dinner)
+  const comboBonus = (hasBurgerCombo(breakfast) ? 2.5 : 0) + (hasBurgerCombo(lunch) ? 2.5 : 0) + (hasBurgerCombo(dinner) ? 2.5 : 0)
+  const dinnerEntreePenalty = dinner.some((item) => isHeartyEntree(item)) ? 0 : 14
+  const dinnerProteinEntreePenalty = dinner.some((item) => isDinnerProteinEntree(item)) ? 0 : 22
 
   const proteinLoss =
     proteinUndershootPenalty(dayTotals.protein, goals.protein) +
@@ -675,7 +865,21 @@ function scoreMeals(meals, goals, mealTargets) {
     undershootPenalty(carbGoal, dayTotals.carbs, 4, 10)
 
   // dayLoss is weighted 2x to make day-total macro accuracy the primary objective
-  const loss = 2 * dayLoss + splitLoss * 0.55 + realismLoss + repeatPenalty(meals) + typeDayRepeatPenalty(meals) + proteinLoss + calorieLoss + carbLoss + gateLoss
+  const loss =
+    2 * dayLoss +
+    splitLoss * 0.55 +
+    realismLoss +
+    duplicateFamilyLoss +
+    burgerCoherenceLoss +
+    dinnerEntreePenalty +
+    dinnerProteinEntreePenalty +
+    repeatPenalty(meals) +
+    typeDayRepeatPenalty(meals) +
+    proteinLoss +
+    calorieLoss +
+    carbLoss +
+    gateLoss -
+    comboBonus
 
   return { loss, dayTotals }
 }
@@ -855,10 +1059,31 @@ export function recommendMeals(rows, goals, hall, preferences) {
     }
   }
 
+  const buildMealPool = (mealKey) => {
+    const basePool = usableRows.filter((item) => mealAvailableFor(item, mealKey))
+    const narrowedPool = basePool.filter((item) => {
+      if (!isMealAppropriate(item, mealKey)) {
+        return false
+      }
+      if (
+        (mealKey === 'lunch' || mealKey === 'dinner') &&
+        hasKeyword(itemSection(item), SNACK_SECTION_KEYWORDS)
+      ) {
+        return false
+      }
+      if (mealKey === 'dinner' && isDinnerLightItem(item)) {
+        return false
+      }
+      return true
+    })
+    const minimumRequired = MEAL_BOUNDS[mealKey]?.min ?? 1
+    return narrowedPool.length >= minimumRequired ? narrowedPool : basePool
+  }
+
   const mealPools = {
-    breakfast: usableRows.filter((item) => mealAvailableFor(item, 'breakfast')),
-    lunch: usableRows.filter((item) => mealAvailableFor(item, 'lunch')),
-    dinner: usableRows.filter((item) => mealAvailableFor(item, 'dinner')),
+    breakfast: buildMealPool('breakfast'),
+    lunch: buildMealPool('lunch'),
+    dinner: buildMealPool('dinner'),
   }
 
   if (!mealPools.breakfast.length || !mealPools.lunch.length || !mealPools.dinner.length) {
@@ -911,6 +1136,10 @@ export function recommendMeals(rows, goals, hall, preferences) {
     const dinner = sampleMeal('dinner', poolInfo.dinner)
 
     if (!breakfast || !lunch || !dinner) {
+      continue
+    }
+
+    if (hasDuplicateFamily(breakfast) || hasDuplicateFamily(lunch) || hasDuplicateFamily(dinner)) {
       continue
     }
 
