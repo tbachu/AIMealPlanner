@@ -2,7 +2,7 @@ import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
 import AiPage from './pages/AiPage'
 import Home from './pages/Home'
 import PlannerPage from './pages/PlannerPage'
-import PreferencesPage from './pages/PreferencesPage'
+import Preferences from './pages/Preferences'
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -49,7 +49,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/planner" element={<PlannerPage />} />
           <Route path="/ai" element={<AiPage />} />
-          <Route path="/preferences" element={<PreferencesPage />} />
+          <Route path="/preferences" element={<Preferences />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
