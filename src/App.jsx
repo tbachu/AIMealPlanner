@@ -3,6 +3,7 @@ import AiPage from './pages/AiPage'
 import Home from './pages/Home'
 import Preferences from './pages/Preferences'
 import Planner from './pages/Planner'
+import uncWellLogo from '../UNC_Well_Logo.png'
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -16,11 +17,18 @@ function App() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-10 border-b border-primary/30 bg-primary text-white shadow-md shadow-primary/30">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-              AIMealPlanner
-            </p>
-            <p className="text-2xl font-semibold text-white sm:text-3xl">Meal Planner</p>
+          <div className="flex items-center gap-3">
+            <img
+              src={uncWellLogo}
+              alt="UNC Well logo"
+              className="h-12 w-auto rounded-lg bg-white/95 p-1 shadow-sm sm:h-14"
+            />
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+                AIMealPlanner
+              </p>
+              <p className="text-2xl font-semibold text-white sm:text-3xl">Meal Planner</p>
+            </div>
           </div>
 
           <nav className="flex flex-wrap gap-2">
